@@ -1,0 +1,30 @@
+\section{Motivation}
+\label{sec:motivation}
+
+In the path integral approach, the partition function is constructed as 
+\begin{equation}
+\label{eq:parti_func}
+    \mathcal{Z}_M = \int_{F_M} e^{\frac{i}{\hbar}S_M(\phi)} \mathcal{D}\phi .
+\end{equation}
+Here $F_M$ is the space of fields, with $\phi \in F_M$, and $S_M$ denotes the action functional of the theory.
+$\mathcal{D} \phi$ is the measure on the space of fields $F_M$, but this is generally problematic since the latter can be infinite dimensional.
+Therefore the measure $\mathcal{D} \phi$ is usually defined as an asymptotic series in $\hbar \rightarrow 0$.
+
+The main idea behind this is that the fast oscillations of the terms cancel out in the integral, except for the fields near the critical points of the action functional $S_M$.
+By expanding the exponential, one is able to write \Cref{eq:parti_func} as a series of Feynman diagrams.
+
+The main problem with this perturbative approach is that is requires the critical points of the action functional to be isolated (more precisely it requires the Hessian matrix at the critical points to be non-degenerate).
+This does not allow us to consider gauge theories in the solutions.
+
+Gauge theories shows up as a symmetry of the Lagrangian function under certain local transformations.
+Thus, there must be an orbit in the space of fields $F_M$, to which our solution belongs, that also preserves the action functional $S_M$.
+In other words, the Hessian matrix is degenerate in the direction of the orbit.
+
+The way out from this problem is through the BV formalism.
+We want to replace the classical data $(F_M, S_M)$ with a triple $(\mathcal{F}_M, \omega_M, \mathcal{S}_M)$, in order to rewrite the partition function in  \Cref{eq:parti_func} as
+\begin{equation}
+\label{eq:part_func_M}
+    \mathcal{Z}_M = \int_{\mathcal{L} \subset \mathcal{F}_M} e^{\frac{i}{\hbar} \mathcal{S}_M} \mathcal{D} \phi
+\end{equation}
+where $\mathcal{L}$ is a Lagrangian submanifold w.r.t. the symplectic structure $\omega_M$.
+This time, in case of gauge theories \Cref{eq:part_func_M} is well-defined and is invariant under deformations of $\mathcal{L}$.

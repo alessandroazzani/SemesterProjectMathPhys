@@ -1,0 +1,36 @@
+\section{Weak Equivalences of dg Manifolds}
+\label{sec:weak_equiv}
+
+Following the first section of \cite{Gluing_BV-BFV}, we now introduce the concept of weak equivalence between symplectic manifolds.
+Then we expand this notion to the relative case, where the manifolds are allowed to have boundaries.
+Finally we adapt the definitions to the linear algebra case, by introducing \emph{Poincaré cochain complexes} and the meaning of weak equivalence between them.
+
+\begin{definition}
+\label{def:weak_1}
+    A \emph{weak equivalence} of two $k$-symplectic manifolds $(\mathcal{F}, Q, \omega)$ and $(\widetilde{\mathcal{F}}, \widetilde{Q}, \widetilde{\omega})$ is a pair of maps $f:\mathcal{F} \rightarrow \widetilde{\mathcal{F}}$ and $f:\widetilde{\mathcal{F}} \rightarrow \mathcal{F}$ satisfying the following:
+    \begin{itemize}
+        \item the pullbacks $f^*:C^\infty(\widetilde{\mathcal{F}}) \rightarrow C^\infty(\mathcal{F})$ and $g^*:C^\infty(\mathcal{F}) \rightarrow C^\infty(\widetilde{\mathcal{F}})$ are quasi-isomorphisms of chain complexes;
+        \item it holds that $f^* \widetilde{\omega} = \omega + L_Q \beta$ and $g^* \omega = \widetilde{\omega} + L_{\widetilde{Q}} \widetilde{\beta}$ for some closed $2$-forms $\beta \in \Omega^2 (\mathcal{F})$ and $\widetilde{\beta} \in \Omega^2 (\widetilde{\mathcal{F}})$.
+    \end{itemize}
+\end{definition}
+
+
+We can generalize \Cref{def:weak_1} to the case where two symplectic manifolds are both relative to the same manifold, which has the role of common boundary between them.
+
+\begin{definition}
+\label{def:weak_relative}
+    We define a \emph{weak equivalence} between two $k$-symplectic manifolds $(\mathcal{F}, Q, \omega, \pi)$ and $(\widetilde{\mathcal{F}}, \widetilde{Q}, \widetilde{\omega}, \widetilde{\pi})$, both relative to the same $(k+1)$-symplectic manifold $(\mathcal{F}_\Sigma, Q_\Sigma, \omega_\Sigma)$, as in \Cref{def:weak_1}, requiring additionally that $\widetilde{\pi} \circ f = \pi$ and $\pi \circ g = \widetilde{\pi}$.
+\end{definition}
+
+\begin{figure}
+    \centering
+        \begin{tikzcd}[sep = 8 ex, font=\normalsize]
+              \mathcal{F} \arrow[rr, "f", bend left = 15] \ar[dr, "\pi", bend left = 0]
+            & 
+            & \widetilde{\mathcal{F}} \ar[ll, "g", bend left = 15] \ar[dl, "\widetilde{\pi}", bend left = 0] \\
+            & \mathcal{F}_\Sigma
+            &
+        \end{tikzcd}
+    \caption{Commutative diagram displaying the additional requirement of \Cref{def:weak_relative}}
+    \label{fig:enter-label}
+\end{figure}

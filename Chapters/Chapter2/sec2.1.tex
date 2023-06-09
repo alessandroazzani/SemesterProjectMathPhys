@@ -1,0 +1,82 @@
+\section{Supergeometry in the Linear case}
+\label{sec:Linear_case}
+
+Before looking at the notion of \emph{supermanifolds} and \emph{graded manifolds}, we introduce these concepts in the linear case.
+Therefore, in this section we will define graded vector spaces and superspaces, as well as some of their properties, to get us familiar with these structures.
+Some of these definition were taken from \cite{Binda}.
+
+\begin{definition}
+    A \emph{graded vector space $V$} is a collection of vector spaces $(V_k)_{k \in \mathcal{I}}$, where $\mathcal{I}$ is an index set.
+    When the index set $\mathcal{I}$ is $\mathbb{Z}$, it is generally called \emph{$\mathbb{Z}$-graded vector space}.
+\end{definition}
+
+From now on, when we talk about graded vector spaces, we will be referring to $\mathbb{Z}$-graded vector spaces.
+Some authors prefer to talk about direct sums of vector spaces instead of a collection.
+We rather avoid this definition because it will be easier to talk about morphisms between the spaces.
+
+Furthermore, given an element $v \in V_k$, $k$ is called the \emph{degree} of $v$.
+
+\begin{definition}
+    Let $V = (V_k)_{k \in \mathbb{Z}}$ be a graded vector space.
+    We can define the \emph{$n$-shift} of $V$ by an integer $n$ by
+    \begin{equation*}
+        V[n] \coloneqq (V_{k + n})_{k \in \mathbb{Z}} .
+    \end{equation*}
+\end{definition}
+
+\begin{definition}
+    A \emph{superspace} is a $\mathbb{Z}_2$-graded vector space $V = V_{\bar{0}} \oplus V_{\bar{1}}$.
+    We call $V_{\bar{0}}$ the vector space of \emph{even} vectors and $V_{\bar{1}}$ the space of \emph{odd} vectors.
+\end{definition}
+
+Notice that a superspace is a graded vector space but with a different grading.
+Together with the concept of superspace comes the parity of it.
+
+\begin{definition}
+    The \emph{parity}, or \emph{degree}, of a superspace $V$ is its $\mathbb{Z}_2$ grading.
+    The degree of an element $v \in V$ is denoted by $|v|$ and given by
+    \begin{equation*}
+        |v| \coloneqq
+        \begin{cases}
+            \text{even}, \quad v \in V_{\bar{0}} \\
+            \text{odd}, \quad v \in V_{\bar{1}}
+        \end{cases}.
+    \end{equation*}
+\end{definition}
+
+If we consider the superspace $V$ to be a regular vector space and an automophism $P: V \rightarrow V$ such that $P^2 = \text{id}$, then we get that an eigenvector $v \in V$ has a $+1$ eigenvalue if it has even parity or, vice versa, if it has an odd parity then its eigenvalue is $-1$.
+Moreover, we can write $P v = (-1)^{|v|}v$.
+
+Notice that every graded vector space $V$ can be regarded as a superspace by setting
+\begin{align*}
+    V_{\bar{0}} &= \bigoplus_{k \in 2 \mathbb{Z}} V_k \\
+    V_{\bar{1}} &= \bigoplus_{k \in 2 \mathbb{Z} + 1} V_k .
+\end{align*}
+Thus, in this case the parity is given by the degree of the subspace modulo 2.
+
+Given a superspace $V$ and the automorphism $P$, one can define the \emph{change of parity}
+\begin{equation*}
+    \Pi : (V, P) \mapsto (V, -P) .
+\end{equation*}
+In this way, we get
+\begin{align*}
+    (\Pi V)_{\bar{0}} &= V_{\bar{1}} \\
+    (\Pi V)_{\bar{1}} &= V_{\bar{0}} .
+\end{align*}
+
+In the case of a graded vector space, the change of parity is defined as the $1$-shift of $V$, thus $\Pi V= V[1]$.
+
+\begin{example}
+\label{ex:comm_anticomm}
+    Locally, we can consider even coordinates ($x^i$) on an open subset $\mathcal{U}$ of $\mathbb{R}$ and the algebra of smooth function $C^\infty (\mathcal{U})$, which are described by their commutativity, i.e. $x^i x^j = x^j x^i$.
+    We can add anticommutating coordinates ($\theta^\mu$) such that, algebraically, we obtain
+    \begin{align*}
+        \theta^\mu x^i &= x^i \theta^\mu \\
+        \theta^\mu \theta^\nu &= \theta^\nu \theta^\mu.
+    \end{align*}
+    We can write the algebra generates by these coordinates as
+    \begin{equation*}
+        \widehat{\mathbb{R}[x, \theta]} = C^\infty (\mathcal{U}) \otimes \bigwedge V^*
+    \end{equation*}
+    for some vector space $V$.
+\end{example}

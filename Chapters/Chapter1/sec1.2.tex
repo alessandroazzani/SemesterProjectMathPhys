@@ -1,0 +1,128 @@
+\section{de Rham Cohomology}
+\label{sec:derham}
+
+In this section we introduce the notion of de Rham differential, followed by the concepts of a chain complex and in particular of de Rham cohomology.
+
+\begin{definition}
+    The \emph{de Rham differential} is defined as the map
+    \begin{align*}
+        \dd : C^{\infty}(M) &\rightarrow \Omega^1(M) \\
+        f &\mapsto \dd f ,
+    \end{align*}
+    which is $\mathbb{R}$-linear and such that the Leibniz rule holds
+    \begin{equation*}
+        \dd (fg) = \dd fg + f \dd g, \quad \forall f, g \in C^{\infty}(M).
+    \end{equation*}
+\end{definition}
+
+The de Rham differential can be quickly generalized to $s$-forms as
+\begin{align*}
+    \dd : \Omega^s (M) &\rightarrow \Omega^{s+1}(M) \\
+    \omega &\mapsto \dd \omega .
+\end{align*}
+
+Explicitly, for an $s$-form $\omega = \sum_{1 \leq i_1 < \ldots < i_s \leq n} \omega_{i_1 \ldots i_s} \dd x^{i_1} \wedge \ldots \wedge \dd x^{i_s}$, we get
+
+\begin{equation*}
+    \dd \omega = \sum_{1 \leq i_1 < \ldots < i_s \leq n} \sum_{j = 1}^n \partial_j \omega_{i_1 \ldots i_s} \dd x^j \wedge \dd x^{i_1} \wedge \ldots \wedge \dd x^{i_s} .
+\end{equation*}
+
+It is easy to see that $\dd ^2 \omega = 0$, which will be an important fact in order to define the de Rham Cohomology group.
+Here we quicly prove that $\dd^2 \omega = 0$, using the fact that partial derivatives commute while the wedge product anti-commute.
+The second de Rham derivative of $\omega$ can be written as
+
+\begin{equation*}
+    \dd ^2 \omega =
+    \sum_{1 \leq i_1 < \ldots < i_s \leq n} \sum_{j = 1}^n \sum_{k = 1}^n
+    \partial_k \partial_j \omega_{i_1 \ldots i_s}
+    \dd x^k \wedge \dd x^j \wedge \dd x^{i_1} \wedge \ldots \wedge \dd x^{i_s}.
+\end{equation*}
+
+For a particular $j=j'$ and $k=k'$, the element of the sum is
+
+\begin{align*}
+     \sum_{1 \leq i_1 < \ldots < i_s \leq n}
+     &\partial_{k'} \partial_{j'} \omega_{i_1 \ldots i_s}
+     \dd x^{k'} \wedge \dd x^{j'} \wedge \dd x^{i_1} \wedge \ldots \wedge \dd x^{i_s} = \\
+     \sum_{1 \leq i_1 < \ldots < i_s \leq n}
+     - &\partial_{j'} \partial_{k'} \omega_{i_1 \ldots i_s}
+     \dd x^{j'} \wedge \dd x^{k'} \wedge \dd x^{i_1} \wedge \ldots \wedge \dd x^{i_s}
+\end{align*}
+
+which cancels with the term having $j = k'$ and $k=j'$.
+
+Let us now introduce the notion of chain complexes.
+
+\begin{definition}
+\label{def:chain}
+    Let $k$ be a ring. A \emph{chain complex} of $k$-modules is a sequence
+    \begin{equation*}
+        \begin{tikzcd}
+            \ldots \rightarrow  C_{n+1} \arrow[r, "\dd _{n+1}"] & C_n
+            \arrow[r, "\dd _{n}"] & C_{n-1} \rightarrow \ldots
+        \end{tikzcd}
+    \end{equation*}
+    where $C_n$ denotes a $k$-module and $\dd _n$ is an homomorphism between $C_n$ and $C_{n-1}$ satisfying $\dd _n \circ \dd _{n-1} = 0$ for all $n \in \mathbb{Z}$.
+\end{definition}
+
+A chain complex as in \Cref{def:chain} is often denoted with $(C_{\bullet}, \dd)$ or just with $C_{\bullet}$.
+In other words, a chain complex is a sequence of modules and a sequence of homomorphisms between consecutive modules such that the image of each homomorphism is included in the kernel of the next one.
+
+If we now want to map to chain complexes to one another, we need to introduce the concept on chain map, which will be necessary to study the gluing properties of the space of fields on two manifolds.
+
+\begin{definition}
+\label{def:chain_map}
+    A \emph{chain map} between two chain complexes $(C_\bullet, \dd \,)$ and $(\widetilde{C}_\bullet, \widetilde{\dd} \,)$ is denoted by $f_\bullet : C_\bullet \rightarrow \widetilde{C}_\bullet$ and is given by a collection of maps $f_n : C_n \rightarrow \widetilde{C}_n$ such that
+    $f_n \circ \dd_{n+1} = \widetilde{\dd}_{n+1} \circ f_{n+1}$ for all $n \in \mathbb{Z}$.
+    In other words, the maps $f_n$ have to satisfy the following commutative diagram
+    \begin{equation*}
+        \begin{tikzcd}
+            \ldots \arrow[r, "\dd_{n+2}"] &
+            C_{n+1} \arrow[r, "\dd_{n+1}"] \arrow[d, "f_{n+1}"] &
+            C_{n} \arrow[r, "\dd_{n}"] \arrow[d, "f_{n}"] &
+            C_{n-1} \arrow[r, "\dd_{n-1}"] \arrow[d, "f_{n-1}"] & \ldots \\
+            \ldots \arrow[r, "\widetilde{\dd}_{n+2}"] &
+            \widetilde{C}_{n+1} \arrow[r, "\widetilde{\dd}_{n+1}"] &
+            \widetilde{C}_{n} \arrow[r, "\widetilde{\dd}_{n}"] &
+            \widetilde{C}_{n-1} \arrow[r, "\widetilde{\dd}_{n-1}"] & \ldots
+    \end{tikzcd}
+    \end{equation*}
+\end{definition}
+
+The requirement in \Cref{def:chain} of inclusion of the image of each homomorphism in the kernel of the next one allows us to introduce the concept of homology, which indeed describes how this inclusion takes place.
+
+\begin{definition}
+\label{def:homology}
+    Let $(C_{\bullet}, \dd )$ be a chain complex.
+    The \emph{$n$-th homology group} of $C_{\bullet}$ is defined as
+    \begin{equation*}
+        H_n (C_\bullet) \coloneqq \frac{\ker (\dd_n)}{\text{Im} (\dd_{n+1})}.
+    \end{equation*}
+\end{definition}
+
+What we get by reversing the direction of the arrows in \Cref{def:chain} is known as \emph{cochain complex} and it is denoted by $C^\bullet$.
+The homology of a cochain complex is called \emph{cohomology} and can simply be written as $H^n (C^\bullet) = {\ker (\dd_n)} / {\text{Im} (\dd_{n-1})}$.
+
+In the particular case where the $k$-modules of the chain complex are the spaces of differential forms on an $n$-dimensional manifold $M$ and the homomorphisms between them are the de Rham differential, then we get what is called \emph{de Rham complex}:
+
+\begin{equation*}
+    0 \rightarrow C^\infty(M) \xrightarrow{\dd} \Omega^1(M)
+    \xrightarrow{\dd} \ldots \xrightarrow{\dd} \Omega^s(M)
+    \xrightarrow{\dd} \Omega^{s+1}(M) \xrightarrow{\dd} \ldots 
+    \xrightarrow{\dd} \Omega^n(M)\rightarrow 0 .
+\end{equation*}
+
+Notice that the requirement $\! \dd^{(s-1)} \circ \dd^{(s)} = 0$ is satisfied by how the differential is constructed.
+Similarly to \Cref{def:homology}, we can define the cohomology group of the de Rham complex.
+
+\begin{definition}
+    The \emph{$s$-th de Rham cohomology} of a de Rham complex of a manifold $M$ is given by
+    \begin{equation*}
+        H^s(M) \coloneqq \frac{\ker \Big( \dd : \Omega^s(M) \rightarrow \Omega^{s+1}(M)  \Big)}
+        {\text{Im}\Big( \dd : \Omega^{s-1}(M) \rightarrow \Omega^{s}(M)  \Big)} .
+    \end{equation*}
+\end{definition}
+
+In particular, we call the elements of $\ker \dd ^{(s)} \coloneqq \{ \omega \in \Omega^s(M) \, | \, \dd ^{(s)} \omega = 0\}$ \emph{closed forms} and the elements of $\text{Im} \, \dd ^{(s)} \coloneqq \{ \omega \in \Omega^s(M) \, | \, \exists \eta \in \Omega^{s-1}(M), \, \omega = \dd \eta \}$ \emph{exact forms}.
+The property $\dd \circ \dd = 0$ tells us that all exact forms are also closed forms, since if $\omega \in \Omega^s(M)$ is exact then $\dd \omega = \dd ^2 \eta = 0$.
+We will denote the collection of all de Rham cohomology groups as $H^\bullet(M)$.

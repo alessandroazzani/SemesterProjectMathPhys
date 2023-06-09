@@ -1,0 +1,49 @@
+\section{The Batalin–Vilkovisky Formalism}
+\label{sec:BV_formalism}
+
+\begin{definition}
+\label{def:BV_manifold}
+    A \emph{BV manifold} is a triple $(\mathcal{F}_M, \omega_M, \mathcal{S}_M)$ where
+    \begin{itemize}
+        \item $\mathcal{F}_M$ is a supermanifold with an additional $\mathbb{Z}$-grading;
+        \item $\omega_M$ an odd symplectic form of degree $-1$;
+        \item $\mathcal{S}_M$ an even function on $\mathcal{F}_M$ of degree $0$, satisfying the \emph{Classical Master Equation} (CME)
+        \begin{equation}
+            \{\mathcal{S}_M, \mathcal{S}_M\} = 0
+        \end{equation}
+        where $\{\;,\,\}$ denotes the Poisson bracket induces by $\omega_M$.
+    \end{itemize}
+\end{definition}
+
+$\mathcal{F}_M$ is usually called the \emph{space of fields} and the function $\mathcal{S}_M$ is the \emph{action functional}.
+
+Similarly to what we did for symplectic manifolds in \Cref{sec:symplectic_geom}, we can consider the Hamiltonian vector field $Q$ given by the Hamiltonian function $\mathcal{S}_M$ with respect to the symplectic form $\omega_M$, defined by the equation
+\begin{equation*}
+    \iota_Q \omega_M = \dd \mathcal{S}_M.
+\end{equation*}
+
+Using Cartan's magic formula:
+\begin{align*}
+    L_Q \omega_M = \iota_Q \dd \omega_M + \dd \iota_Q \omega_M =
+    0 + \dd^2 \mathcal{S}_M = 0
+\end{align*}
+since $\omega_M$ is closed for being a symplectic form.
+This implies that the vector field $Q$ is indeed \emph{symplectic}.
+
+Furthermore, the vector field $Q$ is also \emph{cohomological}, i.e. $Q^2 = 0$.
+Since we have chosen $\omega_M$ to be of degree $-1$, this implies that $Q$ is of degree $+1$ and thus defines a de Rham differential.
+Therefore, it endows $C^\infty(\mathcal{F}_M)$ with the structure of a cochain complex.
+
+Notice that is possible to define the vector field $Q$ also through
+\begin{equation*}
+    Q = \{\mathcal{S}_M, \;\; \}.
+\end{equation*}
+It is therefore possible to write the Classical Master Equation as
+\begin{equation}
+\label{eq:QS0}
+    Q(\mathcal{S}_M) = 0 .
+\end{equation}
+Since $Q$ plays the role of a differential in this formalism, \Cref{eq:QS0} is the equivalent of $\delta S = 0$ in classical mechanics, which then leads us to the Euler-Lagrange equation
+\begin{equation}
+    \dv{t} \pdv{L}{\dot{q}} - \pdv{L}{q} = 0 .
+\end{equation}

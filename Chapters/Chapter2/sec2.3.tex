@@ -1,0 +1,37 @@
+\section{Super and Graded Vector Fields}
+\label{sec:Sup_vector_fields}
+
+In this section we will introduce the last concepts in order to understand the notion of BV-BFV theory.
+We will briefly see how to define vector fields on supermanifold and graded manifolds.
+We will then make some remarks on the concept of differential forms and finally introduce a cohomological vector field.
+
+\begin{definition}
+    A \emph{supervector field} $X$ is a vector field on a supermanifold $\mathcal{M}$, which in local coordinates $(x^i, \theta^\mu)$ can be written as
+    \begin{equation*}
+        X = \sum_{i, \mu} X^i \partial_{x^i} + X^\mu \partial_{\theta^\mu} .
+    \end{equation*}
+\end{definition}
+
+\begin{definition}
+    A \emph{graded vector field} $X$ of degree $k$ on a graded manifold $\mathcal{M}$ is a graded linear map $X: C^\infty(\mathcal{M}) \rightarrow C^\infty(\mathcal{M})[k]$, which satisfies the Liebniz rule
+    \begin{equation*}
+        X(fg) = X(f)g + (-1)^{k|f|} f X(g)
+    \end{equation*}
+    for two functions $f,g \in C^\infty(\mathcal{M})$.
+\end{definition}
+
+We will use a $(+1)$-vector field $Q: C^\infty(\mathcal{M}) \rightarrow C^\infty(\mathcal{M})[1]$ as a differential on the manifold $\mathcal{M}$.
+Furthermore, we will require the vector field $Q$ to be \emph{cohomological}, i.e. $Q^2 = 0$.
+In particular, this will be used as our de Rham differential.
+
+\begin{definition}
+    A \emph{graded symplectic form} $\omega$ of degree $k$ on a graded manifold $\mathcal{M}$ is a closed, non-degenerate $2$-form
+    \begin{equation*}
+        \omega : T\mathcal{M} \rightarrow T^*[k]\mathcal{M}
+    \end{equation*}
+    whch can be written in local coordinates as
+    \begin{equation*}
+        \omega = \sum_{i,j} dy^i \omega_{ij} dy^j
+    \end{equation*}
+    with $dy^\alpha \in \{x^i, \theta^\mu\}$.
+\end{definition}

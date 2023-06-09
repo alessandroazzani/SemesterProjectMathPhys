@@ -1,0 +1,55 @@
+\section{Symplectic Geometry}
+\label{sec:symplectic_geom}
+
+In this section we briefly introduce the concepts of symplectic forms on manifolds and Hamiltonian and symplectic vector fields.
+
+Let $\omega$ be a $2$-form on a manifold $M$. Note that the map
+\begin{equation*}
+    \omega_q : T_q M \times T_q M \rightarrow \mathbb{R}
+\end{equation*}
+is skew-symmetric, meaning that
+\begin{equation*}
+    \forall v, w \in T_q M \quad \omega(v, w) = -\omega(w, v).
+\end{equation*}
+
+If $\omega$ is skew-symmetric and non-degenerate, then is called a \emph{symplectic form}.
+
+\begin{definition}
+    A 2-form $\omega \in \Omega^2(M)$ is called \emph{symplectic} if $\omega$ is closed and $\omega_q$ is symplectic for all $q \in M$.
+\end{definition}
+
+\begin{definition}
+\label{def:sympl_mnf}
+    A pair $(M, \omega)$, where $M$ is a manifold and $\omega$ is a symplectic form, is called a \emph{symplectic manifold}.
+\end{definition}
+
+Recall now that the contraction with a vector field $X \in \mathfrak{X}(M)$ of a $2$-form is a map
+
+\begin{equation*}
+    \iota_X : \Omega^2(M) \rightarrow \Omega^1(M).
+\end{equation*}
+
+If we let $M$ be a symplectic manifold with a symplectic form $\omega$, then by non-degeneracy of $\omega$ it is possible to find a unique vector field $X_H$ such that its contraction with $\omega$ is equal to the de Rham differential of a particular smooth function $H \in C^\infty(M)$, called Hamiltonian function.
+
+\begin{definition}
+    Let $(M, \omega)$ be a symplectic manifold and $H:M\rightarrow \mathbb{R}$ a smooth function.
+    A vector field $X_H \in \mathfrak{X}(M)$ satisfying
+    \begin{equation*}
+        \iota_{X_H}\omega = \dd H
+    \end{equation*}
+    is called \emph{Hamiltonian vector field} with \emph{Hamiltonian function} $H$.
+\end{definition}
+
+In particular, since the $1$-form $\iota_{X_H} \omega$ is the de Rham differential of a function $H$, this means that $\iota_{X_H} \omega$ is exact.
+On the other hand, if $\iota_X \omega$ is closed, using Cartan's magic formula, we can compute the Lie derivative
+
+\begin{equation*}
+    L_X \omega = \iota_X \dd \omega + \dd \iota_X \omega = 0,
+\end{equation*}
+since $\omega$ is closed for being a symplectic form.
+
+\begin{definition}
+    A vector field $X$ on a symplectic manifold $(M, \omega)$ such that $L_X \omega = 0$ is called \emph{symplectic vector field}.
+\end{definition}
+
+\textcolor{red}{I think you should consider adding something on lagrangian submanifolds and how symplectic structures induce Poisson brackets.}

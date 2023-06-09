@@ -1,0 +1,61 @@
+\section{Supermanifolds and Graded Manifolds}
+\label{sec:supermanifolds}
+
+Similarly to the linear case, we want to generalize the concepts of superspace and graded vector space to the case of manifolds.
+For this we start by the definition of supermanifolds.
+
+\begin{definition}
+\label{def:supermanifold}
+    A \emph{supermanifold} $\mathcal{M}$ is a locally ringed space $(M, \mathcal{O}_M)$, which is locally isomorphic to
+    \begin{equation*}
+        \Big(\mathcal{U}, C^\infty(\mathcal{U}) \otimes \bigwedge V^*\Big),
+    \end{equation*}
+    where $\mathcal{U}$ is an open subset of $\mathbb{R}^d$ and $V$ some finite-dimensional real vector space.
+\end{definition}
+
+We call the manifold $M$ in the previous definition the \emph{body} and $\mathcal{O}_M$ the $\emph{structure sheaf}$ of $M$.
+Notice that a supermanifold has locally the same structure as the algebra we described in \Cref{ex:comm_anticomm}.
+
+Notice also that the isomorphism present in \Cref{def:supermanifold} is a $\mathbb{Z}_2$-graded algebra, which is defined by the parity operator:
+\begin{align*}
+    |\quad | : 
+    \bigoplus_{k \geq 0} C^\infty(\mathcal{U}) \otimes \bigwedge^k V^* 
+    &\rightarrow \mathbb{Z}_2 \\
+    f \otimes \theta &
+    \mapsto |f \otimes \theta| = |\theta| = k \! \! \mod{2}.
+\end{align*}
+
+\begin{example}
+    The supermanifold having $\mathbb{R}^q$ as body ($q$ even coordinates) and structure sheaf given by
+    \begin{equation*}
+         C^\infty(\mathbb{R}^q) \otimes \bigwedge \mathbb{R}^p
+    \end{equation*}
+    ($p$ odd coordinates) is called the \emph{standard supermanifold} and denoted by $\mathbb{R}^{q|p}$.
+\end{example}
+
+We now introduce another important structure, that can be combined with the one of supermanifolds.
+
+\begin{definition}
+    \label{def:graded_manifold}
+    A \emph{graded manifold} is a locally ringed space $\mathcal{M} = (M, \mathcal{O}_M)$, which is locally isomorphic to
+    \begin{equation*}
+        \Big(\mathcal{U}, C^\infty(\mathcal{U}) \otimes \text{Sym}(V^*) \Big),
+    \end{equation*}
+    where $\mathcal{U}$ is an open subset of $\mathbb{R}^d$ and $V$ some finite-dimensional real vector space.
+\end{definition}
+ In \Cref{def:graded_manifold}, by $\text{Sym}(V^*)$ we denote the set of symmetric powers of $V^*$, i.e. $\text{Sym}(V^*) \coloneqq \left( \text{Sym}^n(V^*) \right)_{n \in \mathbb{N}}$. The $n$-th symmetric power of a vector space $V$ is given by
+ \begin{equation*}
+     \text{Sym}^n V =
+     V^{\otimes n} /
+     \left( x_1 \otimes \ldots \otimes x_n - \sigma (x_1 \otimes \ldots \otimes x_n,
+     \sigma \in \mathfrak{S}_n \right),
+ \end{equation*}
+ where $\mathfrak{S}_n$ denotes the $n$-th symmetric group.
+
+The $\mathbb{Z}$-grading of a graded manifold is denoted by gh and named \emph{ghost number}.
+In particular, for some function $f$ on a graded manfiold $\mathcal{M}$, we denote by $\text{gh}(f)$ its degree with respect to the $\mathbb{Z}$-grading.
+In particular, physical fields have ghost number zero.
+This is useful since in field theory, the space of fields can be describes with the structure of a graded manifold.
+
+Instead, the $\mathbb{Z}_2$-grading of a supermanifold corresponds to the commuting and anticommuting coordinates.
+In physics language, the property of commuting even coordinates corresponds to bosonic particles, while the anticommuting property of the odd coordinates is specific for fermionic particles.
