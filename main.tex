@@ -9,6 +9,7 @@
 \usepackage{multirow}
 \usepackage{wrapfig}
 \usepackage{cleveref}
+\usepackage{enumitem}
 \usepackage{caption}
 \usepackage{float}
 \usepackage{subcaption}
@@ -33,11 +34,18 @@ sorting=ynt %none
 
 %To write theorems and definitions:
 \newtheorem{theorem}{Theorem}[chapter] % Restarts counter at every section
-\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{lemmaun}{Lemma}[chapter]
 \newtheorem{proposition}{Proposition}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[chapter]
 \newtheorem{example}{Example}[chapter]
+
+%New Commands
+\newcommand{\id}{\text{id}}
+\newcommand{\R}{\ensuremath{\mathcal{R}}}
+\newcommand{\C}{\ensuremath{\mathcal{C}}}
+\newcommand{\F}{\ensuremath{\mathcal{F}}}
+\newcommand{\wt}[1]{\widetilde{#1}}
 
 %Add Bibliography
 \addbibresource{Bibliography.bib}
