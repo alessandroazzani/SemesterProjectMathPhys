@@ -1,9 +1,11 @@
-\section{Weak Equivalences of dg Manifolds}
+\section{Weak Equivalences}
 \label{sec:weak_equiv}
+
+\subsection{Differential Graded Manifold Case}
+\label{subsec:dg_mnfs_case}
 
 Following the first section of \cite{Gluing_BV-BFV}, we now introduce the concept of weak equivalence between symplectic manifolds.
 Then we expand this notion to the relative case, where the manifolds are allowed to have boundaries.
-Finally we adapt the definitions to the linear algebra case, by introducing \emph{Poincaré cochain complexes} and the meaning of weak equivalence between them.
 
 \begin{definition}
 \label{def:weak_1}
@@ -24,13 +26,47 @@ We can generalize \Cref{def:weak_1} to the case where two symplectic manifolds a
 
 \begin{figure}
     \centering
-        \begin{tikzcd}[sep = 8 ex, font=\normalsize]
-              \mathcal{F} \arrow[rr, "f", bend left = 15] \ar[dr, "\pi", bend left = 0]
-            & 
-            & \widetilde{\mathcal{F}} \ar[ll, "g", bend left = 15] \ar[dl, "\widetilde{\pi}", bend left = 0] \\
-            & \mathcal{F}_\Sigma
-            &
-        \end{tikzcd}
+    \input{Tikzpictures/Weak_equiv}
     \caption{Commutative diagram displaying the additional requirement of \Cref{def:weak_relative}}
-    \label{fig:enter-label}
+    \label{fig:weak_equiv}
 \end{figure}
+
+In the above definition, the added requirement makes sure that the projections of fields on the two manifolds $\mathcal{F}$ and $\widetilde{\mathcal{F}}$ onto the manifold $\mathcal{F}_\Sigma$ is the same, in order to consider the manifold $\mathcal{F}_\Sigma$ as a common boundary.
+
+\subsection{Poincaré Complexes Case}
+\label{subsec:Poincaré_complex_case}
+
+Finally, we adapt the definitions of the previous subsection to the linear algebra case, by introducing \emph{Poincaré cochain complexes} and the meaning of weak equivalence between them.
+
+\begin{definition}
+    A \emph{degree $k$ Poincaré complex} is a cochain complex $\mathcal{F}^\bullet$ over $\mathbb{R}$ with a differential $\dd_Q$ and a graded skew-symmetric non-degenerate pairing $\omega : \bigoplus_i \mathcal{F}^i \otimes \mathcal{F}^{-i-k} \rightarrow \mathbb{R}$, satisfying
+    \begin{equation*}
+        \omega(\dd_Q x, y) = (-1)^{|x|} \omega (x, \dd_Q y) \qquad \forall x, y \in \mathcal{F} .
+    \end{equation*}
+\end{definition}
+
+It is possible to generalize \Cref{def:weak_1} to the case of Poincaré complexes, as done below.
+
+\begin{definition}
+\label{def:weak_eq_Poincaré}
+    A \emph{weak equivalence} between two degree $k$ Poincaré complexes $(\mathcal{F}, \dd_Q, \omega)$ and $(\widetilde{\mathcal{F}}, \widetilde{\dd}_Q, \widetilde{\omega})$ is the following set of data:
+    \begin{enumerate}[label=\roman*)]
+        \item A pair of chain maps $f:\mathcal{F} \rightarrow \widetilde{\F}$, $g:\widetilde{\mathcal{F}} \rightarrow \F$;
+        \item A pair of maps $H: \mathcal{F}^\bullet \rightarrow \mathcal{F}^{\bullet -1}$, $\widetilde{H}:\widetilde{\mathcal{F}}^\bullet \rightarrow \widetilde{\mathcal{F}}^{\bullet -1}$ satisfying the \emph{chain homotopy property}
+        \begin{equation}
+            \dd_Q H + H \dd_Q = \id -gf \qquad \wt{\dd}_Q \wt{H} + \wt{H} \wt{\dd}_Q = \id -fg ;
+        \end{equation}
+        \item Two degree $k-1$ skew-symmetric bilinear forms $\beta$ and $\wt{\beta}$ on \F and $\wt{\F}$ respectively, such that
+        \begin{align*}
+            \wt{\omega}(f(x), f(y)) =&
+            \; \omega (x, y) +
+            (L_Q \beta) (x, y),
+            \quad x, y \in \F \\[6pt]
+            \omega(g(\wt{x}), g(\wt{y})) =&
+            \; \wt{\omega}(\wt{x}, \wt{y}) +
+            (L_{\wt{Q}} \wt{\beta})(\wt{x}, \wt{y}),
+            \quad \wt{x}, \wt{y} \in \wt{\F}.
+        \end{align*}
+    \end{enumerate}
+\end{definition}
+
