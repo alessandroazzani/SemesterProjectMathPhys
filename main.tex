@@ -4,6 +4,12 @@
 \usepackage{newlfont}
 \usepackage{color}
 \usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=BrickRed,
+    citecolor=ForestGreen,
+    urlcolor=CornflowerBlue
+    }
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{multirow}
@@ -66,7 +72,11 @@ sorting=ynt %none
 
 
 %Table of contents
-\tableofcontents
+\begingroup
+    \hypersetup{linkcolor=black}
+    \tableofcontents
+\endgroup
+
 
 
 %Introduction
