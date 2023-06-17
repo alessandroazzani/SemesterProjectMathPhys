@@ -1,0 +1,286 @@
+\section{Gluing via Fiber Products}
+\label{sec:gluing_fiber_prod}
+
+In this section we finally see how to glue together two BV-BFV manifolds.
+This is done through \emph{fiber products}, which ensure that a field on the new product space is made of two field, one on each one of the original spaces, such that their projection on the common boundary is the same.
+
+To simplify the introduction of the notion of fiber product, we consider the two manifolds as the result of cutting a bigger manifold into two manifolds with boundaries.
+In particular, assume that the original manifold is a closed $n$-dimensional BV-BFV manifold $(\F_\M, \omega_\M, \mathcal{S}_\M)$, denoted by \M.
+Here the assumption that $\M$ is closed is not necessary, it is made mostly for simplicity.
+
+Let $\M$ be cut by a closed $(n-1)$-submanifold $\Sigma$ into two $n$-dimensional manifolds with boundaries (not closed anymore) $\M_1$ and $\M_2$.
+The original space of fields $\F_\M$ on \M will be cut into two spaces of fields $\F_{\M_1}$ and $\F_{\M_2}$ on the manifolds $\M_1$ and $\M_2$, respectively.
+
+We can now define the fiber product between $\F_{\M_1}$ and $\F_{\M_2}$.
+
+\begin{definition}
+    The \emph{fiber product} between two spaces of fields $\F_{\M_1}$ and $\F_{\M_2}$ over the phase space for the interface $\Sigma$ as described above is defined as
+    \begin{equation}
+    \label{eq:fiber_prod}
+        \wt{\F}_{\M, \Sigma} = \F_{\M_1} \fp{\Phi_\Sigma} \F_{\M_2} 
+        \coloneqq \{(\phi_1, \phi_2) \in \F_1 \times \F_2 \text{  s.t.}
+        \pi_1(\phi_1) = \pi_2(\phi_2) \} .
+    \end{equation}
+\end{definition}
+
+In the definition above, $\phi_1$ and $\phi_2$ represents two fields on $\M_1$ and $\M_2$, while the maps $\pi_1$ and $\pi_2$ are short terms for what we used to denote as $\pi_{\M_1, \Sigma}: \F_{\M_1} \rightarrow \F_\Sigma$ and $\pi_{\M_2, \Sigma}: \F_{\M_2} \rightarrow \F_\Sigma$ in \Cref{def:BV-BFV}, respectively.
+They are the restriction of fields to the boundary.
+
+If we denote the projections of $\M$ into the two manifolds $\M_1$ and $\M_2$ by
+\begin{equation*}
+    p_1: \wt{\F}_{\M, \Sigma} \rightarrow \F_{\M_1} 
+    \qquad
+    p_2: \wt{\F}_{\M, \Sigma} \rightarrow \F_{\M_2},
+\end{equation*}
+then we can also say that the fiber product has to satisfy the following commutative diagram:
+\begin{equation*}
+    \input{Tikzpictures/Fiber_prod}
+\end{equation*}
+Thus, it should be possible to reach the same space of fields on the boundary by considering a field $\phi_1 \in \F_{\M_1}$ and taking its projection on $\Sigma$, or by using the corresponding field $\phi_2 \in \F_{\M_2}$.
+
+Let $\omega_\M$ be the $(-1)$-symplectic structure on $\F_\M$, the $(-1)$-symplectic structure $\wt{\omega}_{\M,\Sigma}$ on $\F_{\M,\Sigma}$ can be written as
+\begin{equation}
+\label{eq:wt_omega}
+    \wt{\omega}_{\M,\Sigma} = 
+    p_1^* \omega_{\M_1} + p_2^* \omega_{\M_2} ,
+\end{equation}
+where $p_{1,2}^*$ denote the pullback by $p_{1,2}$.
+
+Note also that a natural inclusion follows from the definition of fiber product:
+\begin{equation}
+\label{eq:inclusion}
+    i : \F_\M \hookrightarrow \wt{\F}_{\M,\Sigma} .
+\end{equation}
+
+\begin{conj}
+\label{conj:first}
+    The inclusion~\ref{eq:inclusion} can be extended to a weak equivalence of $(-1)$-symplectic manifolds, in the sense of \Cref{def:weak_1}.
+\end{conj}
+
+In case of a free BV-BFV theory, Conjecture~\ref{conj:first} can be adapted to the following.
+
+\begin{conj}
+\label{conj:second}
+    If $\mathcal{T}$ is a free BV-BFV theory, the inclusion~\ref{eq:inclusion} can be extended to a weak equivalence between degree $-1$ Poincaré complexes, in the sense of \Cref{def:weak_eq_Poincaré}.
+\end{conj}
+
+In the paper \cite{Gluing_BV-BFV}, they prove the conjectures above for three different BV-BFV theories:
+\begin{enumerate}[label={\arabic*)}]
+    \item abelian Chern-Simons theory;
+    \item abelian BF theory;
+    \item $\mathbf{p}$-form electrodynamics in the first- or second-order formalism (including massless scalar field and usual electrodynamics as $\mathbf{P} = 0$ and $\mathbf{p} = 1$ cases).
+\end{enumerate}
+
+In this report, we are going to prove it just for the first case, that is for an abelian Chern-Simons theory.
+In particular, the proof of the following theorem will be carried out later on, in \textcolor{red}{cite}.
+
+\begin{theorem}
+\label{theor:gluing}
+    Let $\mathcal{T}$ be an abelian Chern-Simons theory.
+    Then, given any open neighborhood $U \subset \M$ of $\Sigma$, one can extend the inclusion~\ref{eq:inclusion} to a package of maps $(i, p, H, \wt{H})$ defined as
+    \begin{equation}
+    \label{eq:theorem_maps}
+        \input{Tikzpictures/Maps_theorem},
+    \end{equation}
+    such that:
+    \begin{enumerate}[label={\textup{\alph*)}}]
+        \item \label{enum:theor_a} $i$ and $p$ are chain maps w.r.t. differentials $\dd_Q$ on $\FM$ and $\wt{\dd}_Q$ on $\FMS$ (as illustrated in \Cref{fig:chain_map_theorem}):
+        \begin{equation}
+        \label{eq:theor_a}
+            \begin{aligned}
+                \wt{\dd}_Q \; i =& \,\, i \; \dd_Q , \\
+                \dd_Q \; p =& \,\, p \; \wt{\dd}_Q;
+            \end{aligned}
+        \end{equation}
+        \item \label{enum:theor_b} H is the chain homotopy between identity and $p \, i$ on $\FM$ and $\wt{H}$ is the chain homotopy between identity and $i \, p$ on $\FMS$:
+        \begin{equation}
+        \label{eq:theo_b}
+            \begin{aligned}
+                \dd_Q H + H \dd_Q =&
+                \; \id - p \, i , \\
+                \wt{\dd}_Q \wt{H} + \wt{H} \wt{\dd}_Q =&
+                \; \id - p \, i ;
+            \end{aligned}
+        \end{equation}
+        \item \label{enum:theor_c} the package of maps $(i, p, H, \wt{H})$ is local near $\Sigma$:
+        $p$ is smoothing in the neighborhood $U$ of $\Sigma$ and is identity outside $U$. The operators $H$, $\wt{H}$ vanish on fields supported outside $U$;
+        \item \label{enum:theor_d} the $(-1)$-symplectic structures on $\FM$ and $\FMS$ are related by
+        \begin{align}
+        \label{eq:requ_lemma}
+            i^* \wt{\omega} =& \; \omega , \\
+            p^* \omega =& \; \wt{\omega} + L_{\wt{Q}} \wt{\beta} ,
+        \end{align}
+        where $\wt{\beta}$ is given by
+        \begin{multline}
+        \label{eq:beta}
+            \wt{\beta}(\wt{x}, \wt{y}) = (-1)^{k+1} \Big( \bigp{
+            \wt{\omega} (\wt{H} \wt{x}, \wt{y}) + 
+            (-1)^{|\wt{x}|+1} \wt{\omega} (\wt{x}, \wt{H} \wt{y})} \\
+            + \frac{1}{2}\bigp{-\wt{\omega}(\wt{H} \wt{x}, \wt{H} \wt{\dd}_Q \wt{y}) + 
+            (-1)^{|\wt{x}} \wt{\omega}(\wt{H}\wt{\dd}_Q \wt{x}, \wt{H} \wt{y}} - 
+            \wt{\omega}(\wt{H}\wt{x}, \wt{\dd}_Q \wt{H} \wt{y})\Big).
+        \end{multline}
+    \end{enumerate}
+\end{theorem}
+
+\begin{figure}
+    \centering
+    \input{Tikzpictures/Chain_map_i_p}
+    \caption{Diagram illustrating the requirement of \Cref{enum:theor_a} of \Cref{theor:gluing}. Notation $\FM^{\,n}$ denotes the space of fields in $\FM$ with ghost number $n$.}
+    \label{fig:chain_map_theorem}
+\end{figure}
+
+In the paper \cite{Gluing_BV-BFV}, the authors presented and proved a lemma, which we are not going to prove here, that shows how the two BV-BFV manifolds of \Cref{theor:gluing} are weakly equivalent Poincaré complexes.
+In particular, we report the Lemma below for simplicity.
+
+\begin{lemma}
+\label{lemma:Poicare}
+    Let $(\F, \dd_Q, \omega)$ and $(\wt{\F}, \wt{\dd}_Q, \wt{\omega})$ be two $k$-Poincaré complexes.
+    Assume that we have a pair of quasi-isomorphisms $f:\F \rightarrow \wt{\F}$, $g:\wt{\F} \rightarrow \F$ with chain homotopies $H$, $\wt{H}$ and assume that $f^* \wt{\omega} = \omega$.
+    Then $(\F, \dd_Q, \omega)$ and $(\wt{\F}, \wt{\dd}_Q, \wt{\omega})$ are weakly equivalent Poincaré complexes with $\beta = 0$ and with $\wt{\beta}$ defined by \Cref{eq:beta}.
+\end{lemma}
+
+In our case, the quasi-isomorphisms are $i$ and $p$ (as implied by Equations~\ref{eq:theor_a} and \ref{eq:theo_b}) and \Cref{eq:requ_lemma} ensures that \Cref{lemma:Poicare} can be applied.
+Thus, the two BV-BFV manifolds are weakly equivalent.
+Furthermore, we notice that \Cref{eq:wt_omega} is held by the first equation of \Cref{enum:theor_a}.
+
+As already mentioned at the beginning of this section, the assumption that $\M$ is closed is not necessary.
+It has been done mainly for simplicity and in order to use the language of Poincaré complexes.
+But we could allow $\M$ to have a boundary and replace the $(-1)$-symplectic manifold with its relative version, relative to the data on the boundary $\partial \M$ assigned by the theory $\T$.
+
+\subsection{Sketch of Proof of Conjecture~\ref{conj:first}}
+\label{subsec:sketch_proof}
+
+Here we report the sketch of proof for Conjecture~\ref{conj:first} proposed by Cattaneo \etal by factoring through cohomology.
+
+Assume that the BV-BFV theory $\T$ is a perturbation of a free theory $\T_0$ for which Conjecture~\ref{conj:second} holds.
+In particular, we consider that $\T$ is obtained from $\T_0$ by adding terms of polynomial degree greater than 3.
+The cohomological vector field $Q_0 = \dd_Q$ of $\T_0$ is perturbed by terms of polynomial degree greater than 2.
+$\F_\M$ is a graded vector space with cohomological vector field $Q_\M$ corresponding to a $L_\infty$ algebra structure on $\F_\M[-1]$.
+In this setting, we have a $L_\infty$ map ($i:\F_\M \rightarrow \FMS$) and we want to promote it to a weak equivalence, as described in \Cref{def:weak_1}.
+From this point on, we will write $\F_\M \rightarrow \F$ and $\FMS \rightarrow \wt{\F}$ to ease the notation.
+
+\subsubsection{First part}
+\label{subsubsec:first_part}
+
+We start by considering the cohomology $\Hom(\F)$\footnote{We use a different font to distinguish the cohomology $\Hom$ from chain homotopies $H$.}
+of $\F$ w.r.t. $\dd_Q$ and the cohomology $\Hom(\wt{\F})$ of $\wt{\F}$ w.r.t. $\wt{\dd}_Q$.
+We define the contractions $r, j, \wt{r}, \wt{j}$ such that
+\begin{equation}
+    \input{Tikzpictures/Def_contractions}
+\end{equation}
+\begin{equation}
+\label{eq:contractions}
+    \text{and} \qquad
+    i \circ j = \wt{j} \circ i_*, \quad
+    i_* \circ r = \wt{r} \circ i, \quad
+    i \circ h = \wt{h} \circ i .
+\end{equation}
+In the equation above, $i_*$ denotes the push-forward by $i$:
+\begin{equation*}
+    i_* : \Hom(\F) \rightarrow \Hom(\wt{\F}) ,
+\end{equation*}
+which is a linear isomorphism in cohomology.
+
+\begin{figure}
+    \centering
+    \input{Tikzpictures/Contractions_diagram}
+    \caption{Commutative diagram displaying the contractions maps in \Cref{eq:contractions}.}
+    \label{fig:contractions_diagram}
+\end{figure}
+
+In the paper, Cattaneo \etal use the homological perturbation lemma (see \cite[Section 6.4]{Hom_mirror_trasnfer_lemma}) in order to deform the contraction maps $r, j, \wt{r}, \wt{j}$ into the $L_\infty$ maps $\mathpzc{j}, \mathpzc{r}, \wt{\mathpzc{j}}, \wt{\mathpzc{r}}$, such that
+\begin{equation}
+    \input{Tikzpictures/Def_perturbed} .
+\end{equation}
+Here, $\mathcal{H}$, $\wt{\mathcal{H}}$ denote the $L_\infty$ homotopies and $Q_\Hom$, $\wt{Q}_\Hom$ the induced minimal $L_\infty$ algebra structures on cohomology.
+With these new $L_\infty$ maps, Equations~\ref{eq:contractions} become
+\begin{equation}
+    i \circ \cazz{j} = \wt{\cazz{j}} \circ i_*, \quad
+    i_* \circ \cazz{r} = \wt{\cazz{r}} \circ i, \quad
+    i \circ \mc{H} = \wt{\mc{H}} \circ i .
+\end{equation}
+
+Now, in order to lead back to \Cref{eq:theorem_maps}, we need to define the map $p$\footnote{Step taken from \cite[Section 10.4.6]{Algebraic_operands_key_step}, as the authors write.}.
+We construct it as
+\begin{equation}
+\label{eq:def_p}
+    p = \cazz{j} \circ (i_*)^{-1} \circ \wt{\cazz{r}}:
+    \; \wt{\F} \rightarrow \F .
+\end{equation}
+\begin{figure}
+    \centering
+    \input{Tikzpictures/comm_diagram_def_p}
+    \caption{Diagram displaying definition of $p$ as in \Cref{eq:def_p}.}
+    \label{fig:comm_diagram_def_p}
+\end{figure}
+In this way, $p$ is a quasi-inverse of the canonical inclusion $i$.
+We get the diagram of maps
+\begin{equation}
+    \input{Tikzpictures/maps_sketch_proof},
+\end{equation}
+where $i$ and $p$ are quasi-inverse $L_\infty$ quasi-isomorphisms and the $L_\infty$ homotopies $\mc{H}$, $\wt{\mc{H}}$ satisfy
+\begin{equation}
+\label{eq:L_infty_homotopies}
+    \begin{aligned}
+        Q \mc{H} + \mc{H} Q =&
+        \; \id - p \circ i , \\
+        \wt{Q} \wt{\mc{H}} + \wt{\mc{H}} \wt{Q} =&
+        \; \id - i \circ p .
+    \end{aligned}
+\end{equation}
+
+Thus, $i$ and $p$ are the pair of dg maps between $\F$ and $\wt{\F}$ of \Cref{def:weak_1}.
+In particular, their pullbacks are quasi-isomorphisms of chain complexes:
+\begin{equation}
+    \input{Tikzpictures/Maps_chain_complexes} .
+\end{equation}
+This is \Cref{enum:weak_a} of the definition of weak equivalence between $k$-symplectic manifolds.
+
+\subsubsection{Second part}
+\label{subsubsec:second_part}
+
+As for \Cref{enum:weak_b}, we repeat the construction above, but applied to the tangent lifts from $\F$, $\wt{\F}$ to the shifted tangent bundles $T[1]\F$, $T[1]\wt{\F}$.
+In particular, we doubled the constractions in the first Equation~\ref{eq:contractions} to
+\begin{equation}
+    \input{Tikzpictures/Def_contractions_part_b},
+\end{equation}
+and similarly for the second equation with $\wt{\F}$.
+We think of $T[1]\F$ as $\F \oplus \F[1]$ with an extra differential $\delta$ mapping between $\F$ and $\F[1]$.
+Then we use the homological perturbation lemma, yielding to
+\begin{equation}
+    \input{Tikzpictures/Def_perturbed_part_b}
+\end{equation}
+and again similar for the tilde-side.
+
+Then we repeat Construction~\ref{eq:def_p} to define the map $p^*$, quasi-inverse of $i^*$, but at the level of $T[1]\F$ and $t[1]\wt{\F}$.
+We obtain the chain equivalence
+\begin{equation}
+\label{eq:maps_sketch_proof_part_b}
+    \input{Tikzpictures/maps_sketch_proof_part_b} .
+\end{equation}
+
+By fiber product construction we have 
+\begin{equation*}
+    i^* \wt{\omega} = \omega .
+\end{equation*}
+We can use this to obtain
+\begin{equation*}
+    p^* \omega =
+    p^* i^* \wt{\omega}
+    \stackrel{\ref{eq:L_infty_homotopies}}{=}
+    (\id - L_{\wt{Q}} \wt{\mc{H}}^\text{lifted} - \wt{\mc{H}}^\text{lifted} L_{\wt{Q}}) \wt{\omega} =
+    \wt{\omega} + L_{\wt{Q}} (- \wt{\mc{H}}^\text{lifted} \wt{\omega}) =
+    \wt{\omega} + L_{\wt{Q}} \wt{\beta},
+\end{equation*}
+where we used $L_{\wt{Q}} \wt{\omega}=0$ and $\wt{\beta}=- \wt{\mc{H}}^\text{lifted} \wt{\omega}$.
+
+Note that, since $\delta$ commutes with $\wt{\mc{H}}^\text{lifted}$ and with all the other maps of \Cref{eq:maps_sketch_proof_part_b}, $\wt{\beta}$ is a closed 2-form w.r.t. the differential $\delta$, in fact
+\begin{equation*}
+    \delta \wt{\beta} = 
+    - \delta \wt{\mc{H}}^\text{lifted} \wt{\omega} =
+    - \wt{\mc{H}}^\text{lifted} \delta \wt{\omega} =
+    0 .
+\end{equation*}
+
+Thus, we have recovered \Cref{enum:weak_b} of \Cref{def:weak_1} with $\beta = 0$ and $\wt{\beta}=- \wt{\mc{H}}^\text{lifted} \wt{\omega}$.

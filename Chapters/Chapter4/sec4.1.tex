@@ -9,11 +9,11 @@ Then we expand this notion to the relative case, where the manifolds are allowed
 
 \begin{definition}
 \label{def:weak_1}
-    A \emph{weak equivalence} of two $k$-symplectic manifolds $(\mathcal{F}, Q, \omega)$ and $(\widetilde{\mathcal{F}}, \widetilde{Q}, \widetilde{\omega})$ is a pair of maps $f:\mathcal{F} \rightarrow \widetilde{\mathcal{F}}$ and $f:\widetilde{\mathcal{F}} \rightarrow \mathcal{F}$ satisfying the following:
-    \begin{itemize}
-        \item the pullbacks $f^*:C^\infty(\widetilde{\mathcal{F}}) \rightarrow C^\infty(\mathcal{F})$ and $g^*:C^\infty(\mathcal{F}) \rightarrow C^\infty(\widetilde{\mathcal{F}})$ are quasi-isomorphisms of chain complexes;
-        \item it holds that $f^* \widetilde{\omega} = \omega + L_Q \beta$ and $g^* \omega = \widetilde{\omega} + L_{\widetilde{Q}} \widetilde{\beta}$ for some closed $2$-forms $\beta \in \Omega^2 (\mathcal{F})$ and $\widetilde{\beta} \in \Omega^2 (\widetilde{\mathcal{F}})$.
-    \end{itemize}
+    A \emph{weak equivalence} between two $k$-symplectic manifolds $(\mathcal{F}, Q, \omega)$ and $(\widetilde{\mathcal{F}}, \widetilde{Q}, \widetilde{\omega})$ is a pair of maps $f:\mathcal{F} \rightarrow \widetilde{\mathcal{F}}$ and $f:\widetilde{\mathcal{F}} \rightarrow \mathcal{F}$ satisfying the following:
+    \begin{enumerate}[label = \roman*)]
+        \item \label{enum:weak_a} the pullbacks $f^*:C^\infty(\widetilde{\mathcal{F}}) \rightarrow C^\infty(\mathcal{F})$ and $g^*:C^\infty(\mathcal{F}) \rightarrow C^\infty(\widetilde{\mathcal{F}})$ are quasi-isomorphisms of chain complexes;
+        \item \label{enum:weak_b} it holds that $f^* \widetilde{\omega} = \omega + L_Q \beta$ and $g^* \omega = \widetilde{\omega} + L_{\widetilde{Q}} \widetilde{\beta}$ for some closed $2$-forms $\beta \in \Omega^2 (\mathcal{F})$ and $\widetilde{\beta} \in \Omega^2 (\widetilde{\mathcal{F}})$.
+    \end{enumerate}
 \end{definition}
 
 
@@ -57,16 +57,31 @@ It is possible to generalize \Cref{def:weak_1} to the case of Poincaré complexe
             \dd_Q H + H \dd_Q = \id -gf \qquad \wt{\dd}_Q \wt{H} + \wt{H} \wt{\dd}_Q = \id -fg ;
         \end{equation}
         \item Two degree $k-1$ skew-symmetric bilinear forms $\beta$ and $\wt{\beta}$ on \F and $\wt{\F}$ respectively, such that
-        \begin{align*}
-            \wt{\omega}(f(x), f(y)) =&
-            \; \omega (x, y) +
-            (L_Q \beta) (x, y),
-            \quad x, y \in \F \\[6pt]
-            \omega(g(\wt{x}), g(\wt{y})) =&
-            \; \wt{\omega}(\wt{x}, \wt{y}) +
-            (L_{\wt{Q}} \wt{\beta})(\wt{x}, \wt{y}),
-            \quad \wt{x}, \wt{y} \in \wt{\F}.
-        \end{align*}
+        \begin{equation}
+            \begin{aligned}
+                \wt{\omega}(f(x), f(y)) =&
+                \; \omega (x, y) +
+                (L_Q \beta) (x, y),
+                \quad x, y \in \F \\[6pt]
+                \omega(g(\wt{x}), g(\wt{y})) =&
+                \; \wt{\omega}(\wt{x}, \wt{y}) +
+                (L_{\wt{Q}} \wt{\beta})(\wt{x}, \wt{y}),
+                \quad \wt{x}, \wt{y} \in \wt{\F}.   
+            \end{aligned}
+        \end{equation}
     \end{enumerate}
 \end{definition}
 
+Similarly to how we extended \Cref{def:weak_1} to the case where the two $k$-symplectic manifolds were both relative to the same $(k+1)$-symplectic manifold, we can now generalise \Cref{def:weak_eq_Poincaré} to the case where two degree $k$ Poincaré complexes are both relative to a $(k+1)$-Poincaré complex.
+
+\begin{definition}
+\label{def:weak_poincaré_relative}
+    Let $(\F, \dd_Q, \omega, \pi)$ and $(\wt{\F}, \wt{\dd}_Q, \wt{\omega}, \wt{\pi})$ be two $k$-Poincaré complexes relative to the same $(k+1)$-Poicaré complex $(\F^\Sigma, \dd^\Sigma_Q, \omega^\Sigma)$.
+    A \emph{weak equivalence} between $(\F, \dd_Q, \omega, \pi)$ and $(\wt{\F}, \wt{\dd}_Q, \wt{\omega}, \wt{\pi})$ is defined as in \Cref{def:weak_eq_Poincaré}, with the additional requirements:
+    \begin{equation*}
+        \wt{\pi} \circ f = \pi, \quad
+        \pi \circ g = \wt{\pi}, \quad
+        \pi \circ H = 0, \quad
+        \wt{\pi} \circ \wt{H} = 0 .
+    \end{equation*}
+\end{definition}

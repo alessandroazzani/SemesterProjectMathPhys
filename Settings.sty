@@ -1,0 +1,148 @@
+% Use packages ----------------------------------
+\usepackage[english]{babel}
+\usepackage{newlfont}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{gettitlestring}
+\usepackage{csquotes}
+\usepackage{comment}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[sans]{dsfont}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage{tikz-cd}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\usepackage{refcount}
+\usepackage{cleveref}
+\usepackage{enumitem}
+\usepackage[bottom]{footmisc}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=ETHred,
+    citecolor=ForestGreen,
+    urlcolor=CornflowerBlue
+}
+\usepackage[framemethod=default]{mdframed}
+\usepackage[mathscr]{euscript}
+\tikzset{every picture/.style={line width=0.75pt}}
+% Bibliography
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt %none
+]{biblatex}
+\usepackage[a4paper, centering,
+total={5.4in, 8.18in},
+nomarginpar,
+headheight=3cm,
+]{geometry}
+
+% Allow for an extra line break for no warnings in Bibliography ---------------
+
+\emergencystretch=1em
+
+% Theorems and Definitions ---------------------------
+\makeatletter
+\newtheoremstyle{indented}
+  {\topsep}                             % space before
+  {\topsep}                             % space after
+  {\addtolength{\@totalleftmargin}{4mm}
+   \addtolength{\linewidth}{-4mm}
+   \parshape 1 4mm \linewidth}          % body font
+  {}                                    % indent
+  {\bfseries}                           % header font
+  {}                                    % punctuation
+  {.5em}                                % after theorem header
+  {}                                    % header specification (empty for default)
+\makeatother
+\newtheoremstyle{mydefinition}
+  {\topsep}                             % space before
+  {\topsep}                             % space after
+  {}                                    % body font
+  {}                                    % indent
+  {\bfseries}                           % header font
+  {}                                    % punctuation
+  {.5em}                                % after theorem header
+  {}                                    % header specification (empty for default)
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{conj}{Conjecture}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{indented}
+\newtheorem{definition_}{Definition}[chapter]
+\theoremstyle{mydefinition}
+\newtheorem{example}{Example}[chapter]
+\mdfdefinestyle{theoremstyle}{
+linecolor=black,
+linewidth=1pt,
+frametitlerule=false,
+innertopmargin=-3mm,
+innerrightmargin=0mm,
+topline=false,
+bottomline=false,
+rightline=false,
+leftline=true}
+\newmdtheoremenv[style=theoremstyle]{definition}{Definition}[chapter] % To set Definition with a left vertical line
+
+
+% Set toc style and font ------------------------------
+\renewcommand\cftchapfont{\normalsize\bfseries}
+\renewcommand\cftsecfont{\normalsize}
+
+% Page style --------------------------------------------
+\pagestyle{fancy}
+\fancyhead[R]{}
+\fancyhead[L]{\slshape \leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyfoot{}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+%Chapters and sections' format ---------------------------
+\titleformat{\chapter}[display]
+  {\Large\scshape}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat*{\section}{\Large\scshape}
+\titleformat*{\subsection}{\large\scshape}
+\titleformat*{\subsubsection}{\normalsize \bfseries}
+
+% Define ETH colors --------------------------------------
+\definecolor{ETHblue}{RGB}{33, 92, 175}
+\definecolor{ETHpetrol}{RGB}{0, 120, 148}
+\definecolor{ETHgreen}{RGB}{98, 115, 19}
+\definecolor{ETHred}{RGB}{183, 53, 45}
+
+%New Commands ----------------------------------------------
+\newcommand{\id}{\text{id}}
+\newcommand{\R}{\ensuremath{\mathcal{R}}}
+\newcommand{\C}{\ensuremath{\mathcal{C}}}
+\newcommand{\F}{\ensuremath{\mathcal{F}}}
+\newcommand{\M}{\ensuremath{\mathcal{M}}}
+\newcommand{\T}{\ensuremath{\mathcal{T}}}
+\newcommand{\Hom}{\ensuremath{\mathscr{H}}}
+\newcommand{\FM}{\ensuremath{\mathcal{F}_{\mathcal{M}}}}
+\newcommand{\FMS}{\ensuremath{\wt{\F}_{\M, \Sigma}}}
+\newcommand{\cazz}[1]{\ensuremath{\mathpzc{#1}}}
+\newcommand{\etal}{\emph{et al.} }
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\fp}[1]{\times_{#1}}
+\newcommand{\bigp}[1]{\ensuremath{\left(#1 \right)}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+
+% Declare new math alphabet ----------------------------
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}

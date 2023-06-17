@@ -1,75 +1,23 @@
 \documentclass[12pt,a4paper]{report}
-\usepackage[a4paper, centering, total={5.4in, 8.18in}]{geometry}
-\usepackage[english]{babel}
-\usepackage{newlfont}
-\usepackage{color}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=BrickRed,
-    citecolor=ForestGreen,
-    urlcolor=CornflowerBlue
-    }
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{multirow}
-\usepackage{wrapfig}
-\usepackage{cleveref}
-\usepackage{enumitem}
-\usepackage{caption}
-\usepackage{float}
-\usepackage{subcaption}
-\usepackage{refcount}
-\usepackage{gettitlestring}
-\usepackage{csquotes}
-\usepackage{comment}
-\usepackage[dvipsnames, table]{xcolor}
-\usepackage{dsfont}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{mathtools}
-\usepackage{tikz}
-\usepackage{physics}
-\usepackage{tikz-cd}
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt  
-\usepackage[
-backend=biber,
-style=alphabetic,
-sorting=ynt %none
-]{biblatex}
-
-%To write theorems and definitions:
-\newtheorem{theorem}{Theorem}[chapter] % Restarts counter at every section
-\newtheorem{lemmaun}{Lemma}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
-\newtheorem{example}{Example}[chapter]
-
-%New Commands
-\newcommand{\id}{\text{id}}
-\newcommand{\R}{\ensuremath{\mathcal{R}}}
-\newcommand{\C}{\ensuremath{\mathcal{C}}}
-\newcommand{\F}{\ensuremath{\mathcal{F}}}
-\newcommand{\wt}[1]{\widetilde{#1}}
+\usepackage{Settings}
 
 %Add Bibliography
 \addbibresource{Bibliography.bib}
 
-\title{Semester Project}
-\author{Alessandro Azzani}
-\date{\today}
+
 
 \begin{document}
 
-\maketitle
-
+% Make title
+\input{Title/title}
 
 %Abstract
 \begin{abstract}
     Here will go the abstract.
 \end{abstract}
 
+%Start counting in roman numbers
+\pagenumbering{roman}
 
 %Table of contents
 \begingroup
@@ -77,18 +25,14 @@ sorting=ynt %none
     \tableofcontents
 \endgroup
 
-
-
 %Introduction
 \include{Chapters/Introduction}
-
 
 %Include Chapters
 \include{Chapters/Chapter1/Chap1}
 \include{Chapters/Chapter2/Chap2}
 \include{Chapters/Chapter3/Chap3}
 \include{Chapters/Chapter4/Chap4}
-
 
 %Print bibliography
 \printbibliography[heading=bibintoc]

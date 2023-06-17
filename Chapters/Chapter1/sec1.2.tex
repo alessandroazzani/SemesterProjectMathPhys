@@ -76,16 +76,7 @@ If we now want to map to chain complexes to one another, we need to introduce th
     $f_n \circ \dd_{n+1} = \widetilde{\dd}_{n+1} \circ f_{n+1}$ for all $n \in \mathbb{Z}$.
     In other words, the maps $f_n$ have to satisfy the following commutative diagram
     \begin{equation*}
-        \begin{tikzcd}
-            \ldots \arrow[r, "\dd_{n+2}"] &
-            C_{n+1} \arrow[r, "\dd_{n+1}"] \arrow[d, "f_{n+1}"] &
-            C_{n} \arrow[r, "\dd_{n}"] \arrow[d, "f_{n}"] &
-            C_{n-1} \arrow[r, "\dd_{n-1}"] \arrow[d, "f_{n-1}"] & \ldots \\
-            \ldots \arrow[r, "\widetilde{\dd}_{n+2}"] &
-            \widetilde{C}_{n+1} \arrow[r, "\widetilde{\dd}_{n+1}"] &
-            \widetilde{C}_{n} \arrow[r, "\widetilde{\dd}_{n}"] &
-            \widetilde{C}_{n-1} \arrow[r, "\widetilde{\dd}_{n-1}"] & \ldots
-    \end{tikzcd}
+        \input{Tikzpictures/Chain_map}
     \end{equation*}
 \end{definition}
 
