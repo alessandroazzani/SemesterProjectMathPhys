@@ -1,15 +1,15 @@
 \section{Symplectic Geometry}
 \label{sec:symplectic_geom}
 
-In this section we briefly introduce the concepts of symplectic forms on manifolds and Hamiltonian and symplectic vector fields.
+In this section we briefly introduce the concepts of symplectic forms on manifolds, Hamiltonian and symplectic vector fields.
 
 Let $\omega$ be a $2$-form on a manifold $M$. Note that the map
 \begin{equation*}
-    \omega_q : T_q M \times T_q M \rightarrow \mathbb{R}
+    \omega_q : T_q M \wedge T_q M \rightarrow \mathbb{R}
 \end{equation*}
 is skew-symmetric, meaning that
 \begin{equation*}
-    \forall v, w \in T_q M \quad \omega(v, w) = -\omega(w, v).
+    \omega(v, w) = -\omega(w, v), \quad \forall v, w \in T_q M.
 \end{equation*}
 
 If $\omega$ is skew-symmetric and non-degenerate, then is called a \emph{symplectic form}.
@@ -18,6 +18,7 @@ If $\omega$ is skew-symmetric and non-degenerate, then is called a \emph{symplec
     A 2-form $\omega \in \Omega^2(M)$ is called \emph{symplectic} if $\omega$ is closed and $\omega_q$ is symplectic for all $q \in M$.
 \end{definition}
 
+It directly follows the definition of symplectic manifold.
 \begin{definition}
 \label{def:sympl_mnf}
     A pair $(M, \omega)$, where $M$ is a manifold and $\omega$ is a symplectic form, is called a \emph{symplectic manifold}.

@@ -1,0 +1,145 @@
+\section{Abelian Chern-Simons and BF Theories}
+\label{sec:abelain_chern_simons_BF_theories}
+
+In this section we are finally going to prove \Cref{theor:gluing}, first for an abelian Chern-Simons theory and then for an abelian BF theory.
+
+In the proofs, we will need a lemma presented in the paper \cite{Gluing_BV-BFV}, stating as follows.
+
+\begin{lemma}
+\label{lemma:tubular_neighbourhood}
+    let $\N$ be an oriented $n$-manifold and $V \subset \N \times \N$ a tubular neighbourhood of the diagonal $\diag \subset \N \times \N$ with projection $r: V \rightarrow \diag$.
+    Then:
+    \begin{enumerate}[label={\normalfont \alph*)}]
+        \item \label{enum:tubular_a} There exists a smooth closed $n$-form $\rho$ on $\N \times \N$ satisfying
+        \begin{itemize}[label= $\diamond$]
+            \item $\text{\normalfont supp}(\rho) \subset V$,
+            \item $r_* \rho = 1$.
+        \end{itemize}
+        \item \label{enum:tubular_b} Denote $R: \Omega^\bullet_{\distr} (\N) \rightarrow \Omega^\bullet (\N)$ the integral operator from distributional to smooth forms determined by the integral kernel $\rho$.
+        Then:
+        \begin{itemize}[label= $\diamond$]
+            \item $R$ is a chain map w.r.t. the de Rham differential,
+            \item Let $\iota: \Omega^\bullet (N) \hookrightarrow \Omega^\bullet_{\distr} (N)$ be the canonical inclusion of smooth forms into distributional forms.
+            Then $\iota R$ and $R \iota$ are chain-homotopic to identity.
+            More precisely, there exists a distributional form $\chi \in \Omega_{\distr}^{n-1} (\N \times \N)$ supported in $V$ and smooth away from $\diag$ such that $\dd_\chi = \delta_{\diag} - \rho$.
+            As a consequence, one has
+            \begin{equation}
+            \label{eq:chain_homotopy_lemma}
+                \begin{aligned}
+                    {\normalfont \id}_{\Omega^\bullet_{\distr}} - \iota R =& \; \dd k + k \dd , \\
+                    {\normalfont \id}_{\Omega^\bullet} - R \iota =& \; \dd \kappa|_{\Omega^\bullet} + \kappa|_{\Omega^\bullet} \dd .
+                \end{aligned}
+            \end{equation}
+            Here $\kappa: \Omega_{\distr}^{\bullet} (\N) \rightarrow \Omega_{\distr}^{\bullet - 1} (\N)$ is the operator defined by the integral kernel $\chi$.
+        \end{itemize}
+    \end{enumerate}
+\end{lemma}
+
+For the proof of the lemma we refer back to the paper by Cattaneo \etal and to \cite{Proof_second_lemma}.
+
+\subsubsection{Abelian Chern-Simons Theory}
+\label{subsubsec:abelian_chern_simons_theory}
+
+The abelian Chern-Simons theory in the BV-BFV formalism (see \cite{Mnfd_boundaries} for details) has $\R[1]$ as target space.
+The \emph{bulk BV theory} is composed by a 3-dimensional spacetime manifold $\M$, on which it is defined the space of fields
+\begin{equation*}
+    \F_\M = \Omega^\bullet (\M)[1],
+\end{equation*}
+that is the degree shifted de Rham complex.
+We denote by $\mc{A} \in \F_\M$ the BV superfield.
+It then assigns to $\M$:
+\begin{itemize}
+    \item A quadratic BV action $\mc{S}_\M = \frac{1}{2}\int_\M \A \wedge \dd \A$;
+    \item A $(-1)$-symplectic form $\omega_\M = - \frac{1}{2} \int_\M \delta \A \wedge \delta \A$;
+    \item A linear cohomological vector field $Q_\M = \int_\M \dd \A \: \frac{\delta}{\delta \A}$.
+\end{itemize}
+
+The bulk manifold $\M$ is cut into $\M_1$ and $\M_2$ by a BFV manifold $\Sigma$.
+The boundary fields
+\begin{equation*}
+    \F_\Sigma = \Omega^\bullet (\Sigma)[1]
+\end{equation*}
+are pullbacks of the bulk fields to the boundary. The BFV superfield will be denoted with $\A_\Sigma \in \F_\Sigma$.
+To the surface $\Sigma$, the theory assigns:
+\begin{itemize} % [label= $\circ$]
+    \item An Hamiltonian $\mc{S}_\Sigma = \frac{1}{2}\int_\M \A_\Sigma \wedge \dd \A_\Sigma$;
+    \item A symplectic form $\omega_\Sigma = \delta \left( \frac{1}{2} \int_\M \A_\Sigma \wedge \delta \A_\Sigma \right)$;
+    \item A cohomological vector field $Q_\Sigma = \int_\M \dd \A_\Sigma \: \frac{\delta}{\delta \A_\Sigma}$.
+\end{itemize}
+
+The two projections $\pi_{1,2} : \F_{\M_{1,2}} \rightarrow \F_\Sigma$ are the pullbacks from the bulks to the boundary.
+
+The canonical inclusion~(\ref{eq:inclusion}) becomes
+\begin{equation*}
+    i : \underbrace{\Omega^\bullet (\M)[1]}_{\F_\M} \hookrightarrow 
+    \underbrace{\Omega^\bullet (\M_1)[1] \times_{\Omega^\bullet (\Sigma)[1]} \Omega^\bullet (\M_2)[1]}_{\FMS = \F_{\M_1} \times_{\F_\Sigma} \F_{\M_2}} .
+\end{equation*}
+
+We now construct the quasi-inverse $p: \FMS \rightarrow \F_\M$ of the canonical inclusion $i$.
+We define an embedding $\psi: \nor \Sigma \rightarrow \M$ of the normal bundle of $\Sigma$ (complementary to the tangent bundle $T\Sigma$).
+The image $U = \psi(\nor \Sigma)$ is an open neighbourhood of $\Sigma$ which can be made as thin as needed.
+If we now apply \Cref{lemma:tubular_neighbourhood} to $\nor \Sigma$, we get from Items~\ref{enum:tubular_a} and \ref{enum:tubular_b} the smooth $n$-form $\rho$ and the distributional $(n-1)$-form $\chi$, respectively.
+
+From these forms, we define a distributional $n$-form $\hat{\rho}$ on $\M \times \M$ by
+\begin{equation*}
+    \hat{\rho} = 
+        \begin{cases}
+            (\psi^{-1} \times \psi^{-1})^* \rho & \text{ inside } \,  U \times U \\
+             \hfill \delta_{\diag_\M}           &\text{outside } U \times U
+        \end{cases}
+\end{equation*}
+and a distributional $(n-1)$-form $\hat{\chi}$ by
+\begin{equation*}
+    \hat{\chi} = 
+        \begin{cases}
+            (\psi \times \psi)_* \chi & \text{ inside } \,  U \times U \\
+             \hfill 0                 &\text{outside } U \times U .
+        \end{cases}
+\end{equation*}
+
+At this point, we can define the quasi-inverse map $p: \FMS \rightarrow \F$ as the integral operator with kernel $\hat{\rho}$.
+Notice that $p$ is indeed a chain map, since the kernel $\hat{\rho}$ is a closed form on $\M \times \M$.
+
+Similarly, we define the chain homotopy $\wt{H} : \FMS \rightarrow \FMS[1]$ as the integral operator with kernel $\hat{\chi}$.
+If we restrict $\wt{H}$ to $\F_\M$, we get the other chain homotopy $H$.
+Notice that Equations~(\ref{eq:chain_homotopy_lemma}) hold the chain homotopy identities in the \Cref{enum:theor_b} of \Cref{theor:gluing}.
+
+Thus, we have constructed all of the four maps $(i, p, H, \wt{H})$ satisfying all points of \Cref{theor:gluing}.
+
+\subsubsection{Abelian BF theory}
+\label{subsubsec:abelain_bf_theory}
+
+The proof for the abelian BF theory is a direct modification of the construction made for the abelian Chern-Simons theory.
+This time, the spacetime manifold $\M$ can be of generic dimension $n$ (not just 3).
+In this generalized theory, the space of fields is defined as
+\begin{equation*}
+    \F_\M = 
+    \Omega^\bullet (\M)[\p] \oplus
+    \Omega^\bullet (\M)[n-\p-1],
+\end{equation*}
+where $\p \in \mathbb{Z}$ is some fixed shift and we have two BF-superfields $(\mc{A}, \mc{B}) \in \F_\M$.
+Similarly, the theory assigns to the spacetime manifold $\M$:
+\begin{itemize}
+    \item The BV action $\mc{S}_\M = \int_\M \mc{B} \wedge \dd \A$;
+    \item The symplectic form $\omega_\M = (-1)^n  \int_\M \delta \mc{B} \wedge \delta \A$;
+    \item The differential $\dd_Q = \dd \oplus \dd$.
+\end{itemize}
+
+The space of fields on the boundary $\Sigma$ is
+\begin{equation*}
+    \F_\Sigma = 
+    \Omega^\bullet (\Sigma)[\p] \oplus
+    \Omega^\bullet (\Sigma)[n-\p-1]
+\end{equation*}
+and the projections $\pi_{1,2}$ are the pullbacks of $\mc{A}$- and $\mc{B}$-forms from the cut manifolds $\M_{1, 2}$ to $\Sigma$:
+\begin{equation*}
+    \pi_{1, 2} = \F_{\M_{1, 2}} \rightarrow \F_\Sigma .
+\end{equation*}
+
+The canonical inclusion $i$ becomes
+\begin{equation*}
+    \input{Tikzpictures/Inclusion_abelian_BF}
+\end{equation*}
+
+Similarly to Chern-Simons theory, we construct the map $p: \FMS \rightarrow \F_\M$ as the integral operator with kernel $\hat{\rho}$ acting on the $\mc{A}$- and $\mc{B}$-forms in $\FMS$.
+The homotopies $\wt{H}$ and $H$ are the integral operators wth kernel $\hat{\chi}$ and its restriction to $\F_\M$, respectively.

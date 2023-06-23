@@ -44,39 +44,40 @@ Let $\omega_\M$ be the $(-1)$-symplectic structure on $\F_\M$, the $(-1)$-symple
     \wt{\omega}_{\M,\Sigma} = 
     p_1^* \omega_{\M_1} + p_2^* \omega_{\M_2} ,
 \end{equation}
-where $p_{1,2}^*$ denote the pullback by $p_{1,2}$.
+where $p_{1,2}^*$ denotes the pullback by $p_{1,2}$.
 
 Note also that a natural inclusion follows from the definition of fiber product:
 \begin{equation}
 \label{eq:inclusion}
     i : \F_\M \hookrightarrow \wt{\F}_{\M,\Sigma} .
 \end{equation}
+This is indeed an inclusion, since $\F_\M$ only contains smooth fields on $\M$, whereas $\FMS$ contains fields smooth away from the boundary, with an allowed singularity on $\Sigma$.
 
 \begin{conj}
 \label{conj:first}
-    The inclusion~\ref{eq:inclusion} can be extended to a weak equivalence of $(-1)$-symplectic manifolds, in the sense of \Cref{def:weak_1}.
+    The inclusion~(\ref{eq:inclusion}) can be extended to a weak equivalence of $(-1)$-symplectic manifolds, in the sense of \Cref{def:weak_1}.
 \end{conj}
 
 In case of a free BV-BFV theory, Conjecture~\ref{conj:first} can be adapted to the following.
 
 \begin{conj}
 \label{conj:second}
-    If $\mathcal{T}$ is a free BV-BFV theory, the inclusion~\ref{eq:inclusion} can be extended to a weak equivalence between degree $-1$ Poincaré complexes, in the sense of \Cref{def:weak_eq_Poincaré}.
+    If $\mathcal{T}$ is a free BV-BFV theory, the inclusion~(\ref{eq:inclusion}) can be extended to a weak equivalence between degree $-1$ Poincaré complexes, in the sense of \Cref{def:weak_eq_Poincaré}.
 \end{conj}
 
 In the paper \cite{Gluing_BV-BFV}, they prove the conjectures above for three different BV-BFV theories:
 \begin{enumerate}[label={\arabic*)}]
     \item abelian Chern-Simons theory;
     \item abelian BF theory;
-    \item $\mathbf{p}$-form electrodynamics in the first- or second-order formalism (including massless scalar field and usual electrodynamics as $\mathbf{P} = 0$ and $\mathbf{p} = 1$ cases).
+    \item $\mathbf{p}$-form electrodynamics in the first- or second-order formalism (including massless scalar field and usual electrodynamics as $\mathbf{p} = 0$ and $\mathbf{p} = 1$ cases).
 \end{enumerate}
 
-In this report, we are going to prove it just for the first case, that is for an abelian Chern-Simons theory.
-In particular, the proof of the following theorem will be carried out later on, in \textcolor{red}{cite}.
+In this report, we are going to prove it just for the first two cases, that is for an abelian Chern-Simons theory and an abelian BF theory.
+In particular, the proof of the following theorem will be carried out later on, in \Cref{sec:abelain_chern_simons_BF_theories}.
 
 \begin{theorem}
 \label{theor:gluing}
-    Let $\mathcal{T}$ be an abelian Chern-Simons theory.
+    Let $\mathcal{T}$ be an abelian Chern-Simons theory or an abelian BF theory.
     Then, given any open neighborhood $U \subset \M$ of $\Sigma$, one can extend the inclusion~\ref{eq:inclusion} to a package of maps $(i, p, H, \wt{H})$ defined as
     \begin{equation}
     \label{eq:theorem_maps}
@@ -97,9 +98,9 @@ In particular, the proof of the following theorem will be carried out later on, 
         \label{eq:theo_b}
             \begin{aligned}
                 \dd_Q H + H \dd_Q =&
-                \; \id - p \, i , \\
+                \; \text{\textup{id}} - p \, i , \\
                 \wt{\dd}_Q \wt{H} + \wt{H} \wt{\dd}_Q =&
-                \; \id - p \, i ;
+                \; \text{\textup{id}} - i \, p ;
             \end{aligned}
         \end{equation}
         \item \label{enum:theor_c} the package of maps $(i, p, H, \wt{H})$ is local near $\Sigma$:
@@ -140,8 +141,8 @@ In particular, we report the Lemma below for simplicity.
     Then $(\F, \dd_Q, \omega)$ and $(\wt{\F}, \wt{\dd}_Q, \wt{\omega})$ are weakly equivalent Poincaré complexes with $\beta = 0$ and with $\wt{\beta}$ defined by \Cref{eq:beta}.
 \end{lemma}
 
-In our case, the quasi-isomorphisms are $i$ and $p$ (as implied by Equations~\ref{eq:theor_a} and \ref{eq:theo_b}) and \Cref{eq:requ_lemma} ensures that \Cref{lemma:Poicare} can be applied.
-Thus, the two BV-BFV manifolds are weakly equivalent.
+In \Cref{theor:gluing}, the quasi-isomorphisms are $i$ and $p$ (as implied by Equations~(\ref{eq:theor_a}), (\ref{eq:theo_b})) and \Cref{eq:requ_lemma} ensures that \Cref{lemma:Poicare} can be applied.
+Thus, the two BV-BFV manifolds $\F$ and $\FMS$ are weakly equivalent.
 Furthermore, we notice that \Cref{eq:wt_omega} is held by the first equation of \Cref{enum:theor_a}.
 
 As already mentioned at the beginning of this section, the assumption that $\M$ is closed is not necessary.
@@ -158,14 +159,16 @@ In particular, we consider that $\T$ is obtained from $\T_0$ by adding terms of 
 The cohomological vector field $Q_0 = \dd_Q$ of $\T_0$ is perturbed by terms of polynomial degree greater than 2.
 $\F_\M$ is a graded vector space with cohomological vector field $Q_\M$ corresponding to a $L_\infty$ algebra structure on $\F_\M[-1]$.
 In this setting, we have a $L_\infty$ map ($i:\F_\M \rightarrow \FMS$) and we want to promote it to a weak equivalence, as described in \Cref{def:weak_1}.
-From this point on, we will write $\F_\M \rightarrow \F$ and $\FMS \rightarrow \wt{\F}$ to ease the notation.
+From this point on, we will write $\F$ and $\wt{\F}$ instead of $\F_\M$ and $\FMS$, respectively, to ease the notation.
+
+The sketch of the proof will be divided in two parts: the first proposes to prove that \Cref{enum:weak_a} of \Cref{def:weak_1} holds for the settings of \Cref{conj:first}, whereas the second part will prove \Cref{enum:weak_b}.
 
 \subsubsection{First part}
 \label{subsubsec:first_part}
 
 We start by considering the cohomology $\Hom(\F)$\footnote{We use a different font to distinguish the cohomology $\Hom$ from chain homotopies $H$.}
 of $\F$ w.r.t. $\dd_Q$ and the cohomology $\Hom(\wt{\F})$ of $\wt{\F}$ w.r.t. $\wt{\dd}_Q$.
-We define the contractions $r, j, \wt{r}, \wt{j}$ such that
+We define the contractions $r, j, \wt{r}, \wt{j}$ (see \Cref{fig:contractions_diagram}) such that
 \begin{equation}
     \input{Tikzpictures/Def_contractions}
 \end{equation}
@@ -194,7 +197,7 @@ In the paper, Cattaneo \etal use the homological perturbation lemma (see \cite[S
     \input{Tikzpictures/Def_perturbed} .
 \end{equation}
 Here, $\mathcal{H}$, $\wt{\mathcal{H}}$ denote the $L_\infty$ homotopies and $Q_\Hom$, $\wt{Q}_\Hom$ the induced minimal $L_\infty$ algebra structures on cohomology.
-With these new $L_\infty$ maps, Equations~\ref{eq:contractions} become
+With these new $L_\infty$ maps, Equations~(\ref{eq:contractions}) become
 \begin{equation}
     i \circ \cazz{j} = \wt{\cazz{j}} \circ i_*, \quad
     i_* \circ \cazz{r} = \wt{\cazz{r}} \circ i, \quad
@@ -241,7 +244,7 @@ This is \Cref{enum:weak_a} of the definition of weak equivalence between $k$-sym
 \label{subsubsec:second_part}
 
 As for \Cref{enum:weak_b}, we repeat the construction above, but applied to the tangent lifts from $\F$, $\wt{\F}$ to the shifted tangent bundles $T[1]\F$, $T[1]\wt{\F}$.
-In particular, we doubled the constractions in the first Equation~\ref{eq:contractions} to
+In particular, we double the contractions in the first Equation~(\ref{eq:contractions}) to
 \begin{equation}
     \input{Tikzpictures/Def_contractions_part_b},
 \end{equation}
@@ -253,7 +256,7 @@ Then we use the homological perturbation lemma, yielding to
 \end{equation}
 and again similar for the tilde-side.
 
-Then we repeat Construction~\ref{eq:def_p} to define the map $p^*$, quasi-inverse of $i^*$, but at the level of $T[1]\F$ and $t[1]\wt{\F}$.
+Then we repeat Construction~(\ref{eq:def_p}) to define the map $p^*$, quasi-inverse of $i^*$, but at the level of $T[1]\F$ and $T[1]\wt{\F}$.
 We obtain the chain equivalence
 \begin{equation}
 \label{eq:maps_sketch_proof_part_b}
@@ -264,7 +267,7 @@ By fiber product construction we have
 \begin{equation*}
     i^* \wt{\omega} = \omega .
 \end{equation*}
-We can use this to obtain
+We can use this relation to obtain
 \begin{equation*}
     p^* \omega =
     p^* i^* \wt{\omega}

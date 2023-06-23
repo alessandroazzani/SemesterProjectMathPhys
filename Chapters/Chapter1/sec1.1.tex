@@ -7,8 +7,8 @@ We start by defining the tangent space of a manifold at a particular point, give
     The \emph{tangent space} of a manifold $M$ at $q \in M$ is defined by the set of all tangent vectors at $q$.
 \end{definition}
 
-It is possible to map the tangent space at $q \in M$ $T_q M$ to a real vector space $\mathbb{R}^n$ through a bijection.
-This bijection can be used to transfer the vector space operations of $\mathbb{R}^n$ to $T_q M$, thus turning the latter into a real vector sapce of dimension $n$.
+It is possible to map the tangent space $T_q M$ at $q \in M$ to a real vector space $\mathbb{R}^n$ through a bijection.
+This bijection can be used to transfer the vector space operations of $\mathbb{R}^n$ to $T_q M$, thus turning the latter into a real vector space of dimension $n$.
 
 \begin{definition}
     We define the \emph{dimension} of a manifold $M$ as
@@ -17,7 +17,7 @@ This bijection can be used to transfer the vector space operations of $\mathbb{R
     \end{equation*}
 \end{definition}
 
-If we assemble together all the tangent vectors at all points $q$ of a manifold, we obtain the following the tangent bundle.
+If we assemble together all the tangent vectors at all points $q$ of a manifold, we obtain the tangent bundle.
 
 \begin{definition}
     The \emph{tangent bundle} of a manifold $M$ is given by the disjoint union of all vector spaces on a manifold, thus
@@ -50,7 +50,7 @@ The tangent space is already an example of tangent bundle.
 \begin{figure}
     \centering
     \input{Tikzpictures/Mobius_strp}
-    \caption{Construction of the Möbius strip}
+    \caption{Construction of the Möbius strip.}
     \label{fig:Mobius}
 \end{figure}
 
@@ -74,7 +74,7 @@ In local coordinates ($x^i$) on $M$, we can write a vector field $X \in \mathfra
     X = \sum_{i=1}^n X^i \frac{\partial}{\partial x^i}.
 \end{equation*}
 
-In particular, if $M = \mathbb{R}^n$, $X$ a smooth vector field and $f$ a smooth map, then can define
+In particular, if $M = \mathbb{R}^n$, $X$ a smooth vector field and $f$ a smooth map, then we can define
 
 \begin{equation*}
     X(f) = \sum_{i=1}^n X^i \frac{\partial f}{\partial x^i} .
@@ -120,7 +120,7 @@ We denote the space of multivector fields of order $k$ by
 Similarly, we denote the space of differential $s$-forms by
 
 \begin{equation*}
-    \Omega ^s(M) \coloneqq \Gamma (\text{Alt}_s ^0 ) = \Gamma \left( \bigwedge ^k T^*M \right).
+    \Omega ^s(M) \coloneqq \Gamma (\text{Alt}_s ^0 ) = \Gamma \left( \bigwedge ^s T^*M \right).
 \end{equation*}
 
 Choosing local coordinates ($x^i$) on $M$ we can represent the elements $X \in \mathfrak{X}^k(M)$ and $\omega \in \Omega^s(M)$ respectively as

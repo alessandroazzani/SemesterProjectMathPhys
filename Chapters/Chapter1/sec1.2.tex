@@ -28,7 +28,7 @@ Explicitly, for an $s$-form $\omega = \sum_{1 \leq i_1 < \ldots < i_s \leq n} \o
 \end{equation*}
 
 It is easy to see that $\dd ^2 \omega = 0$, which will be an important fact in order to define the de Rham Cohomology group.
-Here we quicly prove that $\dd^2 \omega = 0$, using the fact that partial derivatives commute while the wedge product anti-commute.
+Here we quickly prove that $\dd^2 \omega = 0$, using the fact that partial derivatives commute while the wedge product anti-commutes.
 The second de Rham derivative of $\omega$ can be written as
 
 \begin{equation*}
@@ -41,7 +41,7 @@ The second de Rham derivative of $\omega$ can be written as
 For a particular $j=j'$ and $k=k'$, the element of the sum is
 
 \begin{align*}
-     \sum_{1 \leq i_1 < \ldots < i_s \leq n}
+     \sum_{1 \leq i_1 < \ldots < i_s \leq n} \phantom{-}
      &\partial_{k'} \partial_{j'} \omega_{i_1 \ldots i_s}
      \dd x^{k'} \wedge \dd x^{j'} \wedge \dd x^{i_1} \wedge \ldots \wedge \dd x^{i_s} = \\
      \sum_{1 \leq i_1 < \ldots < i_s \leq n}
@@ -65,10 +65,10 @@ Let us now introduce the notion of chain complexes.
     where $C_n$ denotes a $k$-module and $\dd _n$ is an homomorphism between $C_n$ and $C_{n-1}$ satisfying $\dd _n \circ \dd _{n-1} = 0$ for all $n \in \mathbb{Z}$.
 \end{definition}
 
-A chain complex as in \Cref{def:chain} is often denoted with $(C_{\bullet}, \dd)$ or just with $C_{\bullet}$.
+A chain complex as in \Cref{def:chain} is often denoted with $(C_{\bullet}, \dd)$, or just with $C_{\bullet}$.
 In other words, a chain complex is a sequence of modules and a sequence of homomorphisms between consecutive modules such that the image of each homomorphism is included in the kernel of the next one.
 
-If we now want to map to chain complexes to one another, we need to introduce the concept on chain map, which will be necessary to study the gluing properties of the space of fields on two manifolds.
+If we now want to map to chain complexes to one another, we need to introduce the concept of chain map, which will be necessary to study the gluing properties of the space of fields on two manifolds.
 
 \begin{definition}
 \label{def:chain_map}
@@ -94,7 +94,7 @@ The requirement in \Cref{def:chain} of inclusion of the image of each homomorphi
 What we get by reversing the direction of the arrows in \Cref{def:chain} is known as \emph{cochain complex} and it is denoted by $C^\bullet$.
 The homology of a cochain complex is called \emph{cohomology} and can simply be written as $H^n (C^\bullet) = {\ker (\dd_n)} / {\text{Im} (\dd_{n-1})}$.
 
-In the particular case where the $k$-modules of the chain complex are the spaces of differential forms on an $n$-dimensional manifold $M$ and the homomorphisms between them are the de Rham differential, then we get what is called \emph{de Rham complex}:
+In the particular case where the $k$-modules of the chain complex are the spaces of differential forms on an $n$-dimensional manifold $M$ and the homomorphisms between them are the de Rham differential $\dd$, then we get what is known as \emph{de Rham complex}:
 
 \begin{equation*}
     0 \rightarrow C^\infty(M) \xrightarrow{\dd} \Omega^1(M)

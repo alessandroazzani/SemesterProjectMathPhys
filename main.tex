@@ -12,9 +12,7 @@
 \input{Title/title}
 
 %Abstract
-\begin{abstract}
-    Here will go the abstract.
-\end{abstract}
+\input{Title/abstract}
 
 %Start counting in roman numbers
 \pagenumbering{roman}
@@ -22,6 +20,8 @@
 %Table of contents
 \begingroup
     \hypersetup{linkcolor=black}
+    \pagenumbering{gobble}
+    \renewcommand\contentsname{\bfseries Contents}
     \tableofcontents
 \endgroup
 
