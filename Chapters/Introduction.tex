@@ -1,9 +1,73 @@
 \chapter*{Introduction}
 \markboth{INTRODUCTION}{}
 \addcontentsline{toc}{chapter}{Introduction}
-\label{cap:intro}
+\label{chap:intro}
 
 %Start counting in arabic numbers
 \pagenumbering{arabic}
 
-Here will go the introduction.
+%OVERVIEW OF THE TOPIC AND PRIOR RESEARCH
+
+%From QM to QFT
+Quantum mechanics, developed at the beginning of the 20th century, provides a mathematical tool to describe the behaviour of particles at microscopic scale.
+However, it deals with a small number of particles.
+Quantum field theory \cite{Intro_QFT} comes as a generalization of quantum mechanics to physical fields and their interactions.
+It combines three of the major themes in modern physics: quantum theory, field theory and relativity.
+
+%Path integral approach description
+The path integral approach was first proposed by Richard Feynman \cite{Feynman} as a new quantization method for fields.
+It replaces the notion of a single, unique trajectory for a system to a sum over an infinity of possible trajectories.
+It requires the computation of the partition function
+\begin{equation*}
+    \mc{Z} = \int e^{\frac{i}{\hbar}S(\phi)} \mc{D}\phi ,
+\end{equation*}
+where $\mc{D} \phi$ denotes the integration measure over all paths and $S(\phi)$ is the action functional of the system.
+The method proposed by Feynman to compute the partition function above is a stationary phase expansion, that is a perturbative evaluation over critical points of the action functional $S(\phi)$.
+The main problem to this perturbative approach is that it fails when we want to consider symmetries of the system.
+
+%Gauge theories and why they don't work with path integrals
+\emph{Gauge theories} arises when the Lagrangian which describes our system does not change under some transformations.
+More formally, it means that there exist a Lie group whose action leaves the theory invariant.
+In this sense, the critical points of the Lagrangian are not isolated, there is an orbit in the space of fields, that preserves the action functional $S(\phi)$, and the path integral approach fails.
+
+%Faddeev-Popov and BRST formalisms
+The first formalism to treat gauge theories is the method of \emph{Faddeev-Popov ghosts} \cite{Popov}.
+It introduces additional ghost fields to deal with the redundancies coming from the guage symmetries of the theory.
+This procedure was extended to the \emph{BRST formalism} \cite{BRST_1, BRST_2} considering a graded configuration of fields.
+Nevertheless, both methods fail to consider more general cases where the theory has some natural nonlinear behaviour.
+
+%BV formalism
+The \emph{Batalin-Vilkovisky (BV) formalism} \cite{BV_1, BV_2} was introduced in 1981 in order to solve this problem.
+It makes use of a symplectic structure within the cohomological setting, which allows to interpret gauge-fixing as a choice of Lagrangian submanifold of the space of fields.
+This formalism has then been extended to the \emph{BV-BFV formalism} \cite{Mnfd_boundaries, mCME, Intro_BV-BFV}, which allows to consider also manifolds with boundary.
+
+%Gluing
+In the BV-BFV setting, it is possible to build complex spacetime manifolds by gluing them along boundaries.
+This cutting-gluing methods corresponds to taking fiber products of the spaces of fields.
+
+
+%GOAL OF YOUR THESIS
+In this thesis, we aim to study the paper by Cattaneo \etal \cite{Gluing_BV-BFV}, on gluing manifolds together via fiber products in the classical BV-BFV formalism.
+We will present their main results and apply them to the case of abelian Chern-Simons theory and abelian BF theory.
+
+
+%OUTLINE
+
+%First chapter
+We will start with a brief review of the basics of differential geometry.
+In particular, the first chapter is devoted to the study of the main notions, e.g. vector fields, differential forms, contractions, Lie derivatives, de Rham differential and de Rham cohomology, symplectic geometry, Hamiltonian vector fields and Poisson brackets.
+
+%Second chapter
+The second chapter focuses more on introducing \emph{supergeometry}.
+It starts by applying it to the linear case, and then generalizes it to manifolds, by defining graded manifolds, supermanifolds and their relative vector fields.
+
+%Third chapter
+The third chapter starts by motivating the need of a new formalism to compute path integrals.
+It then introduces the concepts of BV and BFV manifolds.
+Lastly, it put them together in the BV-BFV formalism, creating the setting suitable for building manifolds with boundary and which allow for gluing them together.
+
+%Fourth chapter
+In the fourth and last chapter, we finally go through the paper by Cattaneo \etal \cite{Gluing_BV-BFV}.
+We briefly give some definitions of weak equivalence in some different cases.
+Then we define a fiber product and we present the main theorem of the paper.
+In the last section, we prove the theorem for some specific theories, i.e. the abelian Chern-Simons theory and the abelian BF theory.

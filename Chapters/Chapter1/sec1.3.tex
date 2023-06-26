@@ -53,4 +53,12 @@ since $\omega$ is closed for being a symplectic form.
     A vector field $X$ on a symplectic manifold $(M, \omega)$ such that $L_X \omega = 0$ is called \emph{symplectic vector field}.
 \end{definition}
 
-\textcolor{red}{I think you should consider adding something on lagrangian submanifolds and how symplectic structures induce Poisson brackets. But maybe not really...}
+Since, by definition, a symplectic manifold is endowed with a symplectic form $\omega$, it is then possible to define the Poisson bracket on the manifold.
+\begin{definition}
+    The \emph{Poisson bracket} of two functions $f, g \in C^\infty(M)$ on a symplectic manifold $(M, \omega)$ is defined by
+    \begin{equation*}
+        \{f, g\} \coloneqq \omega(X_f, X_g) .
+    \end{equation*}
+\end{definition}
+In the definition above, the notation $X_f$ denotes the vector field associated with $f$ such that $\iota_{X_f} \omega = \dd f$ holds.
+Thus, it is the Hamiltonian vector field associated to the Hamiltonian function $f$ (the same applies for the function $g$).

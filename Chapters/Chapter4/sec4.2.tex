@@ -2,14 +2,14 @@
 \label{sec:gluing_fiber_prod}
 
 In this section we finally see how to glue together two BV-BFV manifolds.
-This is done through \emph{fiber products}, which ensure that a field on the new product space is made of two field, one on each one of the original spaces, such that their projection on the common boundary is the same.
+This is done through \emph{fiber products}, which ensure that a field on the new product space is made of two fields, one on each one of the original spaces, such that their projection on the common boundary is the same.
 
 To simplify the introduction of the notion of fiber product, we consider the two manifolds as the result of cutting a bigger manifold into two manifolds with boundaries.
-In particular, assume that the original manifold is a closed $n$-dimensional BV-BFV manifold $(\F_\M, \omega_\M, \mathcal{S}_\M)$, denoted by \M.
+In particular, assume that the original manifold is a closed $n$-dimensional BV manifold $(\F_\M, \omega_\M, \mathcal{S}_\M)$, denoted by \M.
 Here the assumption that $\M$ is closed is not necessary, it is made mostly for simplicity.
 
 Let $\M$ be cut by a closed $(n-1)$-submanifold $\Sigma$ into two $n$-dimensional manifolds with boundaries (not closed anymore) $\M_1$ and $\M_2$.
-The original space of fields $\F_\M$ on \M will be cut into two spaces of fields $\F_{\M_1}$ and $\F_{\M_2}$ on the manifolds $\M_1$ and $\M_2$, respectively.
+The original space of fields $\F_\M$ on $\M$ will be cut into two spaces of fields $\F_{\M_1}$ and $\F_{\M_2}$ on the manifolds $\M_1$ and $\M_2$, respectively.
 
 We can now define the fiber product between $\F_{\M_1}$ and $\F_{\M_2}$.
 
@@ -18,12 +18,12 @@ We can now define the fiber product between $\F_{\M_1}$ and $\F_{\M_2}$.
     \begin{equation}
     \label{eq:fiber_prod}
         \wt{\F}_{\M, \Sigma} = \F_{\M_1} \fp{\Phi_\Sigma} \F_{\M_2} 
-        \coloneqq \{(\phi_1, \phi_2) \in \F_1 \times \F_2 \text{  s.t.}
+        \coloneqq \{(\phi_1, \phi_2) \in \F_1 \times \F_2 \; | \;
         \pi_1(\phi_1) = \pi_2(\phi_2) \} .
     \end{equation}
 \end{definition}
 
-In the definition above, $\phi_1$ and $\phi_2$ represents two fields on $\M_1$ and $\M_2$, while the maps $\pi_1$ and $\pi_2$ are short terms for what we used to denote as $\pi_{\M_1, \Sigma}: \F_{\M_1} \rightarrow \F_\Sigma$ and $\pi_{\M_2, \Sigma}: \F_{\M_2} \rightarrow \F_\Sigma$ in \Cref{def:BV-BFV}, respectively.
+In the definition above, $\phi_1$ and $\phi_2$ represent two fields on $\M_1$ and $\M_2$, while the maps $\pi_1$ and $\pi_2$ are short terms for what we used to denote as $\pi_{\M_1, \Sigma}: \F_{\M_1} \rightarrow \F_\Sigma$ and $\pi_{\M_2, \Sigma}: \F_{\M_2} \rightarrow \F_\Sigma$ in \Cref{def:BV-BFV}, respectively.
 They are the restriction of fields to the boundary.
 
 If we denote the projections of $\M$ into the two manifolds $\M_1$ and $\M_2$ by
@@ -38,7 +38,7 @@ then we can also say that the fiber product has to satisfy the following commuta
 \end{equation*}
 Thus, it should be possible to reach the same space of fields on the boundary by considering a field $\phi_1 \in \F_{\M_1}$ and taking its projection on $\Sigma$, or by using the corresponding field $\phi_2 \in \F_{\M_2}$.
 
-Let $\omega_\M$ be the $(-1)$-symplectic structure on $\F_\M$, the $(-1)$-symplectic structure $\wt{\omega}_{\M,\Sigma}$ on $\F_{\M,\Sigma}$ can be written as
+Let $\omega_\M$ be the $(-1)$-symplectic structure on $\F_\M$. Then the $(-1)$-symplectic structure $\wt{\omega}_{\M,\Sigma}$ on $\F_{\M,\Sigma}$ can be written as
 \begin{equation}
 \label{eq:wt_omega}
     \wt{\omega}_{\M,\Sigma} = 
@@ -168,6 +168,12 @@ The sketch of the proof will be divided in two parts: the first proposes to prov
 
 We start by considering the cohomology $\Hom(\F)$\footnote{We use a different font to distinguish the cohomology $\Hom$ from chain homotopies $H$.}
 of $\F$ w.r.t. $\dd_Q$ and the cohomology $\Hom(\wt{\F})$ of $\wt{\F}$ w.r.t. $\wt{\dd}_Q$.
+\begin{figure}
+    \centering
+    \input{Tikzpictures/Contractions_diagram}
+    \caption{Commutative diagram displaying the contractions maps in \Cref{eq:contractions}.}
+    \label{fig:contractions_diagram}
+\end{figure}
 We define the contractions $r, j, \wt{r}, \wt{j}$ (see \Cref{fig:contractions_diagram}) such that
 \begin{equation}
     \input{Tikzpictures/Def_contractions}
@@ -184,13 +190,6 @@ In the equation above, $i_*$ denotes the push-forward by $i$:
     i_* : \Hom(\F) \rightarrow \Hom(\wt{\F}) ,
 \end{equation*}
 which is a linear isomorphism in cohomology.
-
-\begin{figure}
-    \centering
-    \input{Tikzpictures/Contractions_diagram}
-    \caption{Commutative diagram displaying the contractions maps in \Cref{eq:contractions}.}
-    \label{fig:contractions_diagram}
-\end{figure}
 
 In the paper, Cattaneo \etal use the homological perturbation lemma (see \cite[Section 6.4]{Hom_mirror_trasnfer_lemma}) in order to deform the contraction maps $r, j, \wt{r}, \wt{j}$ into the $L_\infty$ maps $\mathpzc{j}, \mathpzc{r}, \wt{\mathpzc{j}}, \wt{\mathpzc{r}}$, such that
 \begin{equation}
@@ -263,7 +262,7 @@ We obtain the chain equivalence
     \input{Tikzpictures/maps_sketch_proof_part_b} .
 \end{equation}
 
-By fiber product construction we have 
+By fiber product construction, we have 
 \begin{equation*}
     i^* \wt{\omega} = \omega .
 \end{equation*}
@@ -276,7 +275,7 @@ We can use this relation to obtain
     \wt{\omega} + L_{\wt{Q}} (- \wt{\mc{H}}^\text{lifted} \wt{\omega}) =
     \wt{\omega} + L_{\wt{Q}} \wt{\beta},
 \end{equation*}
-where we used $L_{\wt{Q}} \wt{\omega}=0$ and $\wt{\beta}=- \wt{\mc{H}}^\text{lifted} \wt{\omega}$.
+where we used $L_{\wt{Q}} \wt{\omega}=0$ and we set $\wt{\beta}=- \wt{\mc{H}}^\text{lifted} \wt{\omega}$.
 
 Note that, since $\delta$ commutes with $\wt{\mc{H}}^\text{lifted}$ and with all the other maps of \Cref{eq:maps_sketch_proof_part_b}, $\wt{\beta}$ is a closed 2-form w.r.t. the differential $\delta$, in fact
 \begin{equation*}
