@@ -18,7 +18,7 @@ The tangent space $T_q M$ of a manifold $M$ at point $q \in M$ is also used to d
 If we assemble together all the tangent vectors at all points $q$ of a manifold, we obtain the tangent bundle.
 
 \begin{definition}
-    The \emph{tangent bundle} of a manifold $M$ is given by the disjoint union of all vector spaces on a manifold, thus
+    The \emph{tangent bundle} of a manifold $M$ is given by the disjoint union of all tangent spaces on a manifold, thus
     \begin{equation*}
         TM \coloneqq \bigsqcup _{q \in M} T_q M .
     \end{equation*}
@@ -30,10 +30,8 @@ There is a natural projection
     \pi : TM &\rightarrow M \\
     (q, v) &\mapsto q .
 \end{align*}
-Then the \emph{fiber} at $q \in M$ is $\pi ^{-1} (q)$.
 
 More generally we can define a vector bundle over a manifold.
-
 \begin{definition}
     A \emph{vector bundle} of rank $r$ is a triple $(E, \pi, M)$, where $E$ is an $r$-dimensional manifold called the \emph{total space}, $M$ is a manifold called the \emph{base space} and $\pi : E \rightarrow M$ is a continuous surjective map.
 \end{definition}
@@ -95,7 +93,7 @@ We will then define the de Rham differential on $s$-forms, the Lie derivative an
 
 \begin{definition}
     Assume $(E, \pi, M)$ is a vector bundle over $M$.
-    We define the \emph{tensor bundle} $T_s ^k (E)$ to be the vector bundle whose fiber at $q$ is the tensor bundle $T_s ^k (E_q) \coloneqq E_q ^{\otimes k} \otimes (E_q ^*) ^{\otimes s}$, where $^{\otimes k}$ denotes the $k$-th tensor power.
+    We define the \emph{tensor bundle} $T_s ^k (E)$ to be the vector bundle whose fiber at $q$ is the tensor bundle $T_s ^k (E_q) \coloneqq E_q ^{\otimes k} \otimes (E_q ^*) ^{\otimes s}$, where $\cdot^{\otimes k}$ denotes the $k$-th tensor power.
 \end{definition}
 
 When the total space $E$ of the vector bundle is the tangent bundle $TM$ of the manifold $M$, we can recover the definitions of multivector field and differential $s$-forms.
@@ -131,7 +129,11 @@ Choosing local coordinates ($x^i$) on $M$ we can represent the elements $X \in \
 \begin{definition}
     The \emph{contraction}, also called \emph{internal multiplication}, of a vector field $X$ with a differential $s$-form $\omega$ is defined as
     \begin{equation*}
-        \iota_X \omega = \sum_{1\leq i_1 < \ldots < i_s \leq n} \sum_{k=1}^n (-1)^k \omega_{i_1 \ldots i_s} X^{i_k} \dd x^{i_1} \wedge \ldots \wedge \widehat{\dd x^{ik}} \wedge \ldots \wedge \dd x^{i_s} \in \Omega^{s-1}(M),
+        \iota_X \omega =
+        \sum_{1\leq i_1 < \ldots < i_s \leq n} \sum_{k=1}^n (-1)^k
+        \omega_{i_1 \ldots i_s} X^{i_k}
+        \dd x^{i_1} \wedge \ldots \wedge \widehat{\dd x^{i_k}} \wedge \ldots \wedge \dd x^{i_s}
+        \in \Omega^{s-1}(M),
     \end{equation*}
     where $\; \widehat{\cdot} \;$ means that the element is omitted.
 \end{definition}

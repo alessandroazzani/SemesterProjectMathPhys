@@ -62,13 +62,13 @@ Let us now introduce the notion of chain complexes.
             \arrow[r, "\dd _{n}"] & C_{n-1} \rightarrow \ldots
         \end{tikzcd}
     \end{equation*}
-    where $C_n$ denotes a $k$-module and $\dd _n$ is an homomorphism between $C_n$ and $C_{n-1}$ satisfying $\dd _n \circ \dd _{n-1} = 0$ for all $n \in \mathbb{Z}$.
+    where $C_n$ denotes a $k$-module and $\dd _n$ is an homomorphism between $C_n$ and $C_{n-1}$ satisfying $\dd _n \circ \dd _{n+1} = 0$ for all $n \in \mathbb{Z}$.
 \end{definition}
 
 A chain complex as in \Cref{def:chain} is often denoted with $(C_{\bullet}, \dd)$, or just with $C_{\bullet}$.
 In other words, a chain complex is a sequence of modules and a sequence of homomorphisms between consecutive modules such that the image of each homomorphism is included in the kernel of the next one.
 
-If we now want to map to chain complexes to one another, we need to introduce the concept of chain map, which will be necessary to study the gluing properties of the space of fields on two manifolds.
+If we now want to map chain complexes to one another, we need to introduce the concept of chain map, which will be necessary to study the gluing properties of the space of fields between two manifolds.
 
 \begin{definition}
 \label{def:chain_map}

@@ -1,10 +1,10 @@
 \section{Gluing via Fiber Products}
 \label{sec:gluing_fiber_prod}
 
-In this section we finally see how to glue together two BV-BFV manifolds.
+In this section, we finally see how to glue together two BV-BFV manifolds.
 This is done through \emph{fiber products}, which ensure that a field on the new product space is made of two fields, one on each one of the original spaces, such that their projection on the common boundary is the same.
 
-To simplify the introduction of the notion of fiber product, we consider the two manifolds as the result of cutting a bigger manifold into two manifolds with boundaries.
+To simplify the introduction of the notion of fiber product, we consider the two manifolds as the result of cutting a bigger manifold into two manifolds with boundary.
 In particular, assume that the original manifold is a closed $n$-dimensional BV manifold $(\F_\M, \omega_\M, \mathcal{S}_\M)$, denoted by \M.
 Here the assumption that $\M$ is closed is not necessary, it is made mostly for simplicity.
 
@@ -36,7 +36,7 @@ then we can also say that the fiber product has to satisfy the following commuta
 \begin{equation*}
     \input{Tikzpictures/Fiber_prod}
 \end{equation*}
-Thus, it should be possible to reach the same space of fields on the boundary by considering a field $\phi_1 \in \F_{\M_1}$ and taking its projection on $\Sigma$, or by using the corresponding field $\phi_2 \in \F_{\M_2}$.
+Thus, it should be possible to reach the same space of fields on the boundary by considering a field $\phi_1 \in \F_{\M_1}$ and taking its projection on $\Sigma$, or by considering the corresponding field $\phi_2 \in \F_{\M_2}$.
 
 Let $\omega_\M$ be the $(-1)$-symplectic structure on $\F_\M$. Then the $(-1)$-symplectic structure $\wt{\omega}_{\M,\Sigma}$ on $\F_{\M,\Sigma}$ can be written as
 \begin{equation}
@@ -65,7 +65,7 @@ In case of a free BV-BFV theory, Conjecture~\ref{conj:first} can be adapted to t
     If $\mathcal{T}$ is a free BV-BFV theory, the inclusion~(\ref{eq:inclusion}) can be extended to a weak equivalence between degree $-1$ Poincaré complexes, in the sense of \Cref{def:weak_eq_Poincaré}.
 \end{conj}
 
-In the paper \cite{Gluing_BV-BFV}, they prove the conjectures above for three different BV-BFV theories:
+Cattaneo \etal \cite{Gluing_BV-BFV} prove the conjectures above for three different BV-BFV theories:
 \begin{enumerate}[label={\arabic*)}]
     \item abelian Chern-Simons theory;
     \item abelian BF theory;
@@ -176,6 +176,7 @@ of $\F$ w.r.t. $\dd_Q$ and the cohomology $\Hom(\wt{\F})$ of $\wt{\F}$ w.r.t. $\
 \end{figure}
 We define the contractions $r, j, \wt{r}, \wt{j}$ (see \Cref{fig:contractions_diagram}) such that
 \begin{equation}
+\label{eq:4.12}
     \input{Tikzpictures/Def_contractions}
 \end{equation}
 \begin{equation}
@@ -243,7 +244,7 @@ This is \Cref{enum:weak_a} of the definition of weak equivalence between $k$-sym
 \label{subsubsec:second_part}
 
 As for \Cref{enum:weak_b}, we repeat the construction above, but applied to the tangent lifts from $\F$, $\wt{\F}$ to the shifted tangent bundles $T[1]\F$, $T[1]\wt{\F}$.
-In particular, we double the contractions in the first Equation~(\ref{eq:contractions}) to
+In particular, we double the contractions in the first Equation~(\ref{eq:4.12}) to obtain
 \begin{equation}
     \input{Tikzpictures/Def_contractions_part_b},
 \end{equation}

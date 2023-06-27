@@ -12,7 +12,7 @@ For this purpose, we need to define a new type of manifold which will be the bou
         \item $\omega_\Sigma$ an even symplectic form of degree $0$;
         \item $\mathcal{S}_\Sigma$ an odd function on $\mathcal{F}_\Sigma$ of degree $+1$, satisfying the Classical Master Equation $\{\mathcal{S}_\Sigma, \mathcal{S}_\Sigma\} = 0$.
     \end{itemize}
-    The BFV manifold is called \emph{exact} is there exists a $1$-form $\alpha_\Sigma$ such that $\omega_\Sigma = \delta \alpha_\Sigma$.
+    The BFV manifold is called \emph{exact} if there exists a $1$-form $\alpha_\Sigma$ such that $\omega_\Sigma = \delta \alpha_\Sigma$.
 \end{definition}
 
 In the definition above, $\delta$ denotes the de Rham differential, generally given by the cohomological vector field $Q_\Sigma = \{\mathcal{S}_\Sigma, \;\;\}$.
@@ -36,7 +36,7 @@ In the definition above, $\delta$ denotes the de Rham differential, generally gi
 Notice that the purpose of the map $\pi_{M, \Sigma}$ in the above definition is to link the fields on the bulk $M$ to the boundary fields on $\Sigma$.
 With $\pi_{M,\Sigma}^*$ we denote the pullback from the space of $1$-forms on $\mathcal{F}_\Sigma$ to the one on $\mathcal{F}_M$, given by $\pi_{M,\Sigma}^* \alpha_\Sigma = \alpha_\Sigma \circ \pi_{M,\Sigma}$.
 
-It is often said that the BV-BFV manifold $(\mathcal{F}_M, \omega_M, \mathcal{S}_M, Q_M, \pi_{M, \Sigma})$ is \emph{relative} to the BFV manifold $(\mathcal{F}_\Sigma, \omega_\Sigma, \mathcal{S}_\Sigma)$ in the definition above.
+In the definition above, the BV-BFV manifold $(\mathcal{F}_M, \omega_M, \mathcal{S}_M, Q_M, \pi_{M, \Sigma})$ is often called \emph{relative} to the BFV manifold $(\mathcal{F}_\Sigma, \omega_\Sigma, \mathcal{S}_\Sigma)$.
 
 On the paper \cite{mCME}, the authors add also the condition $\delta \pi Q = Q_\Sigma$ to \Cref{def:BV-BFV}, where $\delta \pi$ denotes the differential of $\pi$ and $Q_\Sigma$ the cohomological vector field of the function $\mathcal{S}_\Sigma$.
 This leads to the \emph{modified Classic Master Equation} (mCME)
@@ -44,7 +44,7 @@ This leads to the \emph{modified Classic Master Equation} (mCME)
 \label{eq:mCME}
     Q_M (\mathcal{S}_M) = \pi ^* (2 \mathcal{S}_\Sigma - \iota_{Q_\Sigma}(\alpha_\Sigma)).
 \end{equation}
-If $\mathcal{F}_\Sigma$ is a point then the BV-BFV manifold reduces to a BV manifold and the mCME reduces to the usual CME $\{\mathcal{S}_M, \mathcal{S}_M\} = 0$.
+If $\mathcal{F}_\Sigma$ is a point, then the BV-BFV manifold reduces to a BV manifold and the mCME reduces to the usual CME $\{\mathcal{S}_M, \mathcal{S}_M\} = 0$.
 
 \Cref{eq:mCME} can be equivalently written as
 \begin{equation*}
@@ -53,8 +53,8 @@ If $\mathcal{F}_\Sigma$ is a point then the BV-BFV manifold reduces to a BV mani
 
 More generally, BV manifolds as in \Cref{def:BV_manifold} are also called $(-1)$-Hamiltonian manifolds and BFV manifolds as in \Cref{def:BFV_manifold} are known as $0$-Hamiltonian manifolds.
 In particular, the numbers $-1$ and $0$ in front of the Hamiltonian manifolds stand for the degree of the symplectic form.
-In this way, it is possible to deduce the definition of $k$-Hamiltonian manifold from the one of BV manifold be generalising the degree of the symplectic form.
+In this way, it is possible to deduce the definition of $k$-Hamiltonian manifolds from the one of BV manifolds by generalising the degree of the symplectic form.
 
-If a $k$-Hamiltonian manifold is not equipped with its function $\mathcal{S}$, then the manifold is called a $k$-symplectic manifold, generalizing the concept of symplectic manifold we introduced in \Cref{def:sympl_mnf} to the case of graded supermanifolds.
+If a $k$-Hamiltonian manifold is not equipped with its function $\mathcal{S}$, then the manifold is called a $k$-symplectic manifold, generalizing the concept of symplectic manifolds we introduced in \Cref{def:sympl_mnf} to the case of graded supermanifolds.
 
 In the next chapters, we will often refer to this kind of manifolds which are differential and graded as differential graded manifolds, or just with the abbreviation “dg”.
