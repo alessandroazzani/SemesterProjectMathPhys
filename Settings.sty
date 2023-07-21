@@ -44,6 +44,8 @@ backend=biber,
 style=alphabetic,
 sorting=anyt
 ]{biblatex}
+\DeclareDelimFormat[bib]{multinamedelim}{\addcomma\space}
+\DeclareDelimAlias[bib]{finalnamedelim}{multinamedelim}
 \usepackage[a4paper, centering,
 total={5.4in, 8.18in},
 nomarginpar,

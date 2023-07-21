@@ -5,7 +5,7 @@ In this section, we finally see how to glue together two BV-BFV manifolds.
 This is done through \emph{fiber products}, which ensure that a field on the new product space is made of two fields, one on each one of the original spaces, such that their projection on the common boundary is the same.
 
 To simplify the introduction of the notion of fiber product, we consider the two manifolds as the result of cutting a bigger manifold into two manifolds with boundary.
-In particular, assume that the original manifold is a closed $n$-dimensional BV manifold $(\F_\M, \omega_\M, \mathcal{S}_\M)$, denoted by \M.
+In particular, assume that the original manifold is a closed $n$-dimensional BV manifold $\M$.
 Here the assumption that $\M$ is closed is not necessary, it is made mostly for simplicity.
 
 Let $\M$ be cut by a closed $(n-1)$-submanifold $\Sigma$ into two $n$-dimensional manifolds with boundaries (not closed anymore) $\M_1$ and $\M_2$.
@@ -26,7 +26,7 @@ We can now define the fiber product between $\F_{\M_1}$ and $\F_{\M_2}$.
 In the definition above, $\phi_1$ and $\phi_2$ represent two fields on $\M_1$ and $\M_2$, while the maps $\pi_1$ and $\pi_2$ are short terms for what we used to denote as $\pi_{\M_1, \Sigma}: \F_{\M_1} \rightarrow \F_\Sigma$ and $\pi_{\M_2, \Sigma}: \F_{\M_2} \rightarrow \F_\Sigma$ in \Cref{def:BV-BFV}, respectively.
 They are the restriction of fields to the boundary.
 
-If we denote the projections of $\M$ into the two manifolds $\M_1$ and $\M_2$ by
+If we denote the projections of $\M$ onto the two manifolds $\M_1$ and $\M_2$ by
 \begin{equation*}
     p_1: \wt{\F}_{\M, \Sigma} \rightarrow \F_{\M_1} 
     \qquad
@@ -65,7 +65,7 @@ In case of a free BV-BFV theory, Conjecture~\ref{conj:first} can be adapted to t
     If $\mathcal{T}$ is a free BV-BFV theory, the inclusion~(\ref{eq:inclusion}) can be extended to a weak equivalence between degree $-1$ Poincaré complexes, in the sense of \Cref{def:weak_eq_Poincaré}.
 \end{conj}
 
-Cattaneo \etal \cite{Gluing_BV-BFV} prove the conjectures above for three different BV-BFV theories:
+Cattaneo and Mnev \cite{Gluing_BV-BFV} prove the conjectures above for three different BV-BFV theories:
 \begin{enumerate}[label={\arabic*)}]
     \item abelian Chern-Simons theory;
     \item abelian BF theory;
@@ -152,13 +152,13 @@ But we could allow $\M$ to have a boundary and replace the $(-1)$-symplectic man
 \subsection{Sketch of Proof of Conjecture~\ref{conj:first}}
 \label{subsec:sketch_proof}
 
-Here we report the sketch of proof for Conjecture~\ref{conj:first} proposed by Cattaneo \etal by factoring through cohomology.
+Here we report the sketch of proof for Conjecture~\ref{conj:first} proposed by Cattaneo and Mnev by factoring through cohomology.
 
 Assume that the BV-BFV theory $\T$ is a perturbation of a free theory $\T_0$ for which Conjecture~\ref{conj:second} holds.
 In particular, we consider that $\T$ is obtained from $\T_0$ by adding terms of polynomial degree greater than 3.
 The cohomological vector field $Q_0 = \dd_Q$ of $\T_0$ is perturbed by terms of polynomial degree greater than 2.
-$\F_\M$ is a graded vector space with cohomological vector field $Q_\M$ corresponding to a $L_\infty$ algebra structure on $\F_\M[-1]$.
-In this setting, we have a $L_\infty$ map ($i:\F_\M \rightarrow \FMS$) and we want to promote it to a weak equivalence, as described in \Cref{def:weak_1}.
+$\F_\M$ is a graded vector space with cohomological vector field $Q_\M$ corresponding to a $L_\infty$-algebra structure on $\F_\M[-1]$.
+In this setting, we have a $L_\infty$-map ($i:\F_\M \rightarrow \FMS$) and we want to promote it to a weak equivalence, as described in \Cref{def:weak_1}.
 From this point on, we will write $\F$ and $\wt{\F}$ instead of $\F_\M$ and $\FMS$, respectively, to ease the notation.
 
 The sketch of the proof will be divided in two parts: the first proposes to prove that \Cref{enum:weak_a} of \Cref{def:weak_1} holds for the settings of \Cref{conj:first}, whereas the second part will prove \Cref{enum:weak_b}.
@@ -171,7 +171,7 @@ of $\F$ w.r.t. $\dd_Q$ and the cohomology $\Hom(\wt{\F})$ of $\wt{\F}$ w.r.t. $\
 \begin{figure}
     \centering
     \input{Tikzpictures/Contractions_diagram}
-    \caption{Commutative diagram displaying the contractions maps in \Cref{eq:contractions}.}
+    \caption{Commutative diagram displaying the contraction maps in \Cref{eq:contractions}.}
     \label{fig:contractions_diagram}
 \end{figure}
 We define the contractions $r, j, \wt{r}, \wt{j}$ (see \Cref{fig:contractions_diagram}) such that
@@ -192,12 +192,12 @@ In the equation above, $i_*$ denotes the push-forward by $i$:
 \end{equation*}
 which is a linear isomorphism in cohomology.
 
-In the paper, Cattaneo \etal use the homological perturbation lemma (see \cite[Section 6.4]{Hom_mirror_trasnfer_lemma}) in order to deform the contraction maps $r, j, \wt{r}, \wt{j}$ into the $L_\infty$ maps $\mathpzc{j}, \mathpzc{r}, \wt{\mathpzc{j}}, \wt{\mathpzc{r}}$, such that
+In the paper, Cattaneo and Mnev use the homological perturbation lemma (see \cite[Section 6.4]{Hom_mirror_trasnfer_lemma}) in order to deform the contraction maps $r, j, \wt{r}, \wt{j}$ into the $L_\infty$-maps $\mathpzc{j}, \mathpzc{r}, \wt{\mathpzc{j}}, \wt{\mathpzc{r}}$, such that
 \begin{equation}
     \input{Tikzpictures/Def_perturbed} .
 \end{equation}
-Here, $\mathcal{H}$, $\wt{\mathcal{H}}$ denote the $L_\infty$ homotopies and $Q_\Hom$, $\wt{Q}_\Hom$ the induced minimal $L_\infty$ algebra structures on cohomology.
-With these new $L_\infty$ maps, Equations~(\ref{eq:contractions}) become
+Here, $\mathcal{H}$, $\wt{\mathcal{H}}$ denote the $L_\infty$-homotopies and $Q_\Hom$, $\wt{Q}_\Hom$ the induced minimal $L_\infty$-algebra structures on cohomology.
+With these new $L_\infty$-maps, Equations~(\ref{eq:contractions}) become
 \begin{equation}
     i \circ \cazz{j} = \wt{\cazz{j}} \circ i_*, \quad
     i_* \circ \cazz{r} = \wt{\cazz{r}} \circ i, \quad
@@ -214,7 +214,7 @@ We construct it as
 \begin{figure}
     \centering
     \input{Tikzpictures/comm_diagram_def_p}
-    \caption{Diagram displaying definition of $p$ as in \Cref{eq:def_p}.}
+    \caption{Diagram displaying the definition of $p$ as in \Cref{eq:def_p}.}
     \label{fig:comm_diagram_def_p}
 \end{figure}
 In this way, $p$ is a quasi-inverse of the canonical inclusion $i$.
@@ -222,7 +222,7 @@ We get the diagram of maps
 \begin{equation}
     \input{Tikzpictures/maps_sketch_proof},
 \end{equation}
-where $i$ and $p$ are quasi-inverse $L_\infty$ quasi-isomorphisms and the $L_\infty$ homotopies $\mc{H}$, $\wt{\mc{H}}$ satisfy
+where $i$ and $p$ are quasi-inverse $L_\infty$-quasi-isomorphisms and the $L_\infty$-homotopies $\mc{H}$, $\wt{\mc{H}}$ satisfy
 \begin{equation}
 \label{eq:L_infty_homotopies}
     \begin{aligned}

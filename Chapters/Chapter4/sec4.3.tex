@@ -15,12 +15,12 @@ In the proofs, we will need a lemma presented in the paper \cite{Gluing_BV-BFV},
             \item $\text{\normalfont supp}(\rho) \subset V$,
             \item $r_* \rho = 1$.
         \end{itemize}
-        \item \label{enum:tubular_b} Denote $R: \Omega^\bullet_{\distr} (\N) \rightarrow \Omega^\bullet (\N)$ the integral operator from distributional to smooth forms determined by the integral kernel $\rho$.
+        \item \label{enum:tubular_b} Denote by $R: \Omega^\bullet_{\distr} (\N) \rightarrow \Omega^\bullet (\N)$ the integral operator from distributional to smooth forms determined by the integral kernel $\rho$.
         Then:
         \begin{itemize}[label= $\diamond$]
             \item $R$ is a chain map w.r.t. the de Rham differential,
             \item Let $\iota: \Omega^\bullet (N) \hookrightarrow \Omega^\bullet_{\distr} (N)$ be the canonical inclusion of smooth forms into distributional forms.
-            Then $\iota R$ and $R \iota$ are chain-homotopic to identity.
+            Then $\iota R$ and $R \iota$ are chain-homotopic to the identity.
             More precisely, there exists a distributional form $\chi \in \Omega_{\distr}^{n-1} (\N \times \N)$ supported in $V$ and smooth away from $\diag$ such that $\dd_\chi = \delta_{\diag} - \rho$.
             As a consequence, one has
             \begin{equation}
@@ -35,13 +35,13 @@ In the proofs, we will need a lemma presented in the paper \cite{Gluing_BV-BFV},
     \end{enumerate}
 \end{lemma}
 
-For the proof of the lemma we refer back to the paper by Cattaneo \etal and to \cite{Proof_second_lemma}.
+For the proof of the lemma we refer back to the paper by Cattaneo and Mnev and to \cite{Proof_second_lemma}.
 
 \subsubsection{Abelian Chern-Simons Theory}
 \label{subsubsec:abelian_chern_simons_theory}
 
 The abelian Chern-Simons theory in the BV-BFV formalism (see \cite{Mnfd_boundaries} for details) has $\R[1]$ as target space.
-The \emph{bulk BV theory} is composed by a 3-dimensional spacetime manifold $\M$, on which it is defined the space of fields
+The \emph{bulk BV theory} is composed by a 3-dimensional spacetime manifold $\M$, on which we define the space of fields
 \begin{equation*}
     \F_\M = \Omega^\bullet (\M)[1],
 \end{equation*}
@@ -62,7 +62,7 @@ The boundary fields
 are pullbacks of the bulk fields to the boundary. The BFV superfield will be denoted with $\A_\Sigma \in \F_\Sigma$.
 To the surface $\Sigma$, the theory assigns:
 \begin{itemize} % [label= $\circ$]
-    \item An Hamiltonian $\mc{S}_\Sigma = \frac{1}{2}\int_\M \A_\Sigma \wedge \dd \A_\Sigma$;
+    \item A Hamiltonian $\mc{S}_\Sigma = \frac{1}{2}\int_\M \A_\Sigma \wedge \dd \A_\Sigma$;
     \item A symplectic form $\omega_\Sigma = \delta \left( \frac{1}{2} \int_\M \A_\Sigma \wedge \delta \A_\Sigma \right)$;
     \item A cohomological vector field $Q_\Sigma = \int_\M \dd \A_\Sigma \: \frac{\delta}{\delta \A_\Sigma}$.
 \end{itemize}
@@ -76,8 +76,8 @@ The canonical inclusion~(\ref{eq:inclusion}) becomes
 \end{equation*}
 
 We now construct the quasi-inverse map $p: \FMS \rightarrow \F_\M$ of the canonical inclusion $i$.
-We define an embedding $\psi: \nor \Sigma \rightarrow \M$ of the normal bundle of $\Sigma$\footnote{The \emph{normal bundle} of $\Sigma$ is complementary to the tangent bundle $T\Sigma$ and given by 
-$N\Sigma \coloneqq \{ (q, p) | q \in \Sigma, p \in T_q \M / T_q \Sigma \}$.}.
+We define an embedding $\psi: \nor \Sigma \rightarrow \M$ of the normal bundle of $\Sigma$.\footnote{The \emph{normal bundle} of $\Sigma$ is complementary to the tangent bundle $T\Sigma$ and given by 
+$N\Sigma \coloneqq \{ (q, p) | q \in \Sigma, p \in T_q \M / T_q \Sigma \}$.}
 The image $U = \psi(\nor \Sigma)$ is an open neighbourhood of $\Sigma$ which can be made as thin as needed.
 If we now apply \Cref{lemma:tubular_neighbourhood} to $\nor \Sigma$, we get from Items~\ref{enum:tubular_a} and \ref{enum:tubular_b} the smooth $n$-form $\rho$ and the distributional $(n-1)$-form $\chi$, respectively.
 

@@ -19,13 +19,14 @@ $\mathcal{F}_M$ is usually called the \emph{space of fields} and the function $\
 
 Similarly to what we did for symplectic manifolds in \Cref{sec:symplectic_geom}, we can consider the Hamiltonian vector field $Q$ given by the Hamiltonian function $\mathcal{S}_M$ with respect to the symplectic form $\omega_M$, defined by the equation
 \begin{equation*}
-    \iota_Q \omega_M = \dd \mathcal{S}_M.
+    \iota_Q \omega_M = \delta \mathcal{S}_M,
 \end{equation*}
+where $\delta$ denotes the de Rham differential on the space of fields.
 
 Using Cartan's magic formula:
 \begin{align*}
-    L_Q \omega_M = \iota_Q \dd \omega_M + \dd \iota_Q \omega_M =
-    0 + \dd^2 \mathcal{S}_M = 0
+    L_Q \omega_M = \iota_Q \delta \omega_M + \delta \iota_Q \omega_M =
+    0 + \delta^2 \mathcal{S}_M = 0
 \end{align*}
 since $\omega_M$ is closed for being a symplectic form.
 This implies that the vector field $Q$ is indeed \emph{symplectic}.
